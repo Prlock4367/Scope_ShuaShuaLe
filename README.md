@@ -7,7 +7,7 @@
 </p>
 
 <h1 align="center">
-  🔬 示波器刷刷乐
+  <img src="assets/logo.svg" width="34" alt="示波器刷刷乐"> 示波器刷刷乐
 </h1>
 
 <p align="center">
