@@ -1,0 +1,2409 @@
+/*
+ * Yue_ShuaShuaLe — 2026 浅色主题·方案A（CoinMarketCap/通义配方，2026-08-15）
+ * 配方：白底 + 紫色径向光晕（通义紫 rgb(98,92,246)）+ hairline 细线边框 + 数字入场微动效
+ * 参考：CoinMarketCap（白底 + 浅紫光晕 ×28）/ 通义（紫光晕 ×17，46 动画）2026 实测
+ * 历史备份：style.css.bak-20260815（2020 玻璃）/ .bak-20260815-D（方案D）/ .bak-20260815-B（方案B）
+ */
+
+/* ── 开源字体（2026-08-16 定稿：华为鸿蒙 HarmonyOS Sans）──
+   官方许可（HarmonyOS Sans Fonts License）：免版税、可嵌入、可捆绑、可再分发，商用无风险。
+   中文字形 + 拉丁（数字英文）双 woff2，子集化自托管，零外网依赖。
+   2026-08-30 补 500/700 真字重（官方 zip 提取 → fonttools 子集化）：
+   此前只嵌 400，CSS 里 500/600/700 全被浏览器伪粗（假粗体发糊、形似换字体）。
+   600 无真字形，按 CSS 规范就近取 700 Bold 渲染。用字清单charset.txt 同步更新需重跑子集。 */
+@font-face {
+    font-family: 'HarmonySans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('fonts/HarmonySansSC-400.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'HarmonySans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('fonts/HarmonySans-400.woff2') format('woff2');
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'HarmonySans';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('fonts/HarmonySansSC-500.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'HarmonySans';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('fonts/HarmonySans-500.woff2') format('woff2');
+    unicode-range: U+0020-007E;
+}
+@font-face {
+    font-family: 'HarmonySans';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('fonts/HarmonySansSC-700.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'HarmonySans';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('fonts/HarmonySans-700.woff2') format('woff2');
+    unicode-range: U+0020-007E;
+}
+
+/* ── CSS Variables ── *//* ── CSS Variables ── */
+:root {
+    --bg: #f9f8f8;                             /* 暖白底（2026-08-29 参照 DeepSeek 实测值 rgb(249,248,248)） */
+    --cloud-tint: #9bafd4;                     /* 背景烟纹主题色（cloud-bg.js 读取，换主题色只改这一处） */
+    --card-bg: rgba(255,255,255,0.82);        /* 数据卡 regular glass（2026-08-30 用户定稿 0.82：0.78 融、0.85 弱，取中间） */
+    --glass-bg: rgba(255,255,255,0.85);      /* 导航毛玻璃保留但更实（OpenAI 也有玻璃） */
+    --card-border: rgba(255,255,255,0.6);    /* 玻璃白边（玻璃的"边缘语言"是亮边，深色 hairline 是平面卡语言） */
+    --card-shadow: 0 0 1px rgba(0,0,0,0.08), 0 12px 32px rgba(0,0,0,0.07), inset 0 1px 0 rgba(255,255,255,0.7);   /* 轮廓线+悬浮软影+顶部内高光（苹果 lit bezel） */
+    --card-hover-shadow: 0 0 1px rgba(0,0,0,0.12), 0 16px 40px rgba(0,0,0,0.10), inset 0 1px 0 rgba(255,255,255,0.7);
+    --text: #1a1a1a;
+    --text-secondary: #666;
+    --text-muted: #999;
+    --accent: #0B3868;                 /* 主题色：普鲁士蓝（2026-08-11 用户定） */
+    --accent-hover: #093058;
+    --accent-soft: rgba(11,56,104,0.08);
+    --accent-glow: rgba(11,56,104,0.25);
+    --danger: #d13438;
+    --danger-soft: rgba(209,52,56,0.08);
+    --success: #107c10;
+    --success-soft: rgba(16,124,16,0.08);
+    --warn: #d47c00;
+    --warn-soft: rgba(212,124,0,0.08);
+    --border: rgba(0,0,0,0.06);   /* 表格细分隔线（方案A：比方案B更细） */
+    --table-stripe: rgba(0,0,0,0.015);
+    --table-hover: rgba(11,56,104,0.04);
+    --radius: 20px;      /* 大卡外圆角 20px（2026-08-30 定稿：主流设计系统 lg 档；DeepSeek hero 24 略收） */
+    --radius-sm: 6px;
+    --radius-lg: 12px;
+    --font: 'HarmonySans', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', sans-serif;   /* 2026-08-16 定稿：全站鸿蒙 HarmonyOS Sans（中英数字，华为官方许可：免版税可嵌入可商用） */
+    --mono: 'Cascadia Code', 'Fira Code', 'Consolas', 'JetBrains Mono', monospace;            /* 弃用：零带点影响直观（仅代码场景备用） */
+    --blur: blur(12px) saturate(1.5);        /* DeepSeek 实测 blur12 + 苹果配方 saturate 提饱和（烟雾透进来更润） */
+    --blur-lg: blur(36px) saturate(1.8);
+    /* 平台品牌色（chips / 徽章 / 状态点 / 图标统一引用；改这里一处全站生效） */
+    --pf-buff: #222222;       --pf-buff-soft: rgba(34,34,34,0.14);
+    --pf-uuyp: #e0933f;       --pf-uuyp-soft: rgba(224,147,63,0.14);
+    --pf-steam: #0F64B5;      --pf-steam-soft: rgba(15,100,181,0.14);   /* Steam = 鸢尾蓝（用户定稿） */
+    /* 走势图柱状 = 平台色灰调版（与折线纯色区分） */
+    --pf-buff-bar: #8a8a8a;
+    --pf-uuyp-bar: #e0a06e;
+    --pf-steam-bar: #5486B7;
+    /* 游戏品牌色 */
+    --game-csgo: #EB5C20;     --game-csgo-soft: rgba(235,92,32,0.14);  /* CS2 = 落日橘 */
+    --game-tf2: #53589A;      --game-tf2-soft: rgba(83,88,154,0.12);   /* TF2 = 长春花蓝 */
+    --game-dota2: #C8161D;    --game-dota2-soft: rgba(200,22,29,0.12); /* DOTA2 = 中国红 */
+    /* 比例档位色（摘要大数字 / 徽章 / 图表统一） */
+    --ratio-excellent: #2e7f18; --ratio-excellent-soft: rgba(46,127,24,0.12);
+    --ratio-good: #6b8e23;      --ratio-good-soft: rgba(107,142,35,0.12);
+    --ratio-normal: #c18a12;    --ratio-normal-soft: rgba(193,138,18,0.12);
+    --ratio-warn: #c2410c;      --ratio-warn-soft: rgba(194,65,12,0.12);
+    --ratio-bad: #c82538;       --ratio-bad-soft: rgba(200,37,56,0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    /* 背景（2026-08-29）：numpy 离线生成的水墨烟雾图直铺（bg-smoke.jpg，marbling+失焦+底部渐白） */
+    background: #f9f8f8;
+    color: var(--text);
+    font: 15px/1.6 var(--font);
+    min-height: 100vh;
+    padding-top: 90px;   /* 悬浮药丸导航（fixed，底缘 16+56=72px）让出空间；导航→内容保持 26px */
+    -webkit-font-smoothing: antialiased;
+    font-variant-numeric: tabular-nums;   /* 数字等宽对齐（2026 数据站细节，参考 TradingView/CoinMarketCap） */
+    position: relative;
+    z-index: 0;   /* 液态玻璃前提：bg-smoke 从 body 挪到 ::before 固定层—— */
+}                  /* Chromium 的 backdrop-filter 采样不到 attachment:fixed 的 body 背景，必须真实 fixed 层 */
+
+/* 背景烟雾固定层（2026-08-29）：图不动、滚动只滚内容；z-index:-1 让玻璃卡能采样到它 */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    /* ?v= 防负缓存：2026-08-30 部署日 CF 边缘缓存过上传前的 404（max-age 14400），带参绕开污染键 */
+    background: url('/static/images/bg-smoke.jpg?v=20260830') top center / cover no-repeat;
+    pointer-events: none;
+}
+
+/* 锚点跳转让位：目标不被悬浮药丸盖住（21st.dev 药丸导航实践，2026-08） */
+html { scroll-padding-top: 72px; overflow-anchor: none; }   /* 关滚动锚定（2026-08-30）：上浮动画收尾时内容整体上移，锚定会反向补偿滚动 → 表现为刷新后页面自动往下滚 */
+
+/* 背景光晕 blob 已删除（2026-08-29 用户拍板放弃）：DeepSeek 式液体色块 AI 写不出想要的效果，
+   且白色化后无存在感。背景视觉 = WebGL 云朵 shader（js/cloud-bg.js，deepseek.com 同技术），
+   层次交给卡片阴影（见 --card-shadow 2026 配方）。 */
+
+/* 小字号辅助文字 = 正体（2026-08-16 豆包识图：斜体小字发虚，尤其英文原名/页脚/标签） */
+.label, .sub-hash, .footer-sub, .footer-brand, .pc-label, .pc-time, .trend-caption,
+.summary-head, .filter-label, .lg-item, .bp-label, .trend-foot, .breadcrumb, .compare-note {
+}
+
+/* 入场微动效（2026-08-30 四稿）：全部同时起跑，零延迟——延迟等待期会让大玻璃卡
+   "隐形→突然动"（首页大卡闪一下 / 详情页下方卡消失一阵，F5 保留滚动位置时尤其明显）。
+   层次感由时长+曲线差体现：小卡 0.8s 柔和先到站，大气泡 1s easeOutExpo 后到站（顿挫力道），
+   整窗 1s（用户定：0.6 太急）。
+   fill 用 backwards——结束后回自然态不锁 hover 的 translateY */
+@keyframes dsRiseIn {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: none; }
+}
+.stats-row .stat-card { animation: dsRiseIn 0.8s cubic-bezier(0.33, 0, 0.2, 1) backwards; }
+.main-card { animation: dsRiseIn 1s cubic-bezier(0.16, 1, 0.3, 1) backwards; }
+/* 详情页：同页同波，主卡柔和小卡档，平台卡/信息卡大气泡档 */
+.detail-page .chart-line-wrap { animation: dsRiseIn 0.8s cubic-bezier(0.33, 0, 0.2, 1) backwards; }
+.detail-page .pf-card { animation: dsRiseIn 1s cubic-bezier(0.16, 1, 0.3, 1) backwards; }
+.detail-page .info-section { animation: dsRiseIn 1s cubic-bezier(0.16, 1, 0.3, 1) backwards; }
+/* 筛选/排序/切详情全是整页跳转，入场动画只在会话首次加载播一次（F5 reload 放行，见 base.html 头部脚本）；
+   html.no-entrance 由 base.html 在首帧渲染前打上，防动画每次点击重播 */
+html.no-entrance .stats-row .stat-card,
+html.no-entrance .main-card,
+html.no-entrance .detail-page .chart-line-wrap,
+html.no-entrance .detail-page .pf-card,
+html.no-entrance .detail-page .info-section { animation: none; }
+/* 减弱动效偏好：入场与浮起全关，留阴影变化兜底反馈 */
+@media (prefers-reduced-motion: reduce) {
+    .stats-row .stat-card,
+    .main-card,
+    .detail-page .chart-line-wrap,
+    .detail-page .pf-card,
+    .detail-page .info-section { animation: none; }
+    .stat-card:hover, .pf-card:hover { transform: none; }
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header / Nav ──
+   2026-08-29 悬浮药丸导航（DeepSeek 式）：header 通栏透明、只做定位层；nav 是悬浮胶囊。
+   2026-08-30 用户定稿：未滚动也给玻璃材质（与数据卡同配方，宽横条形态）——
+   页面主体全是玻璃卡、裸文字导航显得孤立；08-29 "白玻璃会融合"的结论是 0.62 时代旧账，
+   0.82 玻璃已验证压得住背景。
+   2026-08-30 二次定稿（方案B 滚动跟随）：宽窄/圆角不再两态切换，改为连续跟随滚动——
+   滚动 0→160px 映射变形进度 --np 0→1（base.html rAF 写入），滚多少变多少、手停即停，
+   根治"到顶后才开始变形"的突兀（两态切换的病根在触发时机，调曲线无效）。
+   600→1384px 宽 / 16→999px 圆角随 --np 线性插值；材质全程不变无需过渡。 */
+header {
+    position: fixed;
+    top: 16px;   /* 2026-08-30：8→16px，与下方 26px 成 1:1.6，胶囊不再吸顶（原上下 8/26 三倍差失衡） */
+    left: 0;
+    right: 0;
+    z-index: 100;
+    pointer-events: none;   /* 通栏不挡点击，只有胶囊本身接收 */
+}
+
+nav {
+    pointer-events: auto;
+    /* 宽度对齐卡片（2026-08-30 用户定稿）：容器 1440 - 两侧 28 内边距 = 卡片边缘 1384，
+       导航可视边缘与下方大卡片完全同线（窄屏下 100%-56px = 容器 28px 内边距同边）。
+       收窄行程：1384 → 1200（-184px）；圆角行程：16 → 999（+983px） */
+    --np: 0;
+    width: calc(100% - 56px);
+    max-width: calc(1384px - 184px * var(--np));
+    margin: 0 auto;
+    padding: 0 22px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--card-bg);             /* 玻璃（2026-08-30）：与数据卡同材质 */
+    border: 1px solid var(--card-border);   /* 玻璃白边 */
+    box-shadow: var(--card-shadow);         /* 轮廓线+悬浮软影+顶部内高光 */
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    border-radius: calc(var(--radius) + 983px * var(--np));
+}
+
+/* is-scrolled 两态规则已删（2026-08-30 方案B）：几何改为 --np 滚动连续插值，材质两态本就相同 */
+
+.nav-brand {
+    display: flex;
+    align-items: baseline;
+    gap: 0;
+}
+
+/* 品牌抬头（2026-08-30 站名去 Steam 防安全库"Steam余额"关键词误判）：整体加粗、统一色号 */
+.brand-cn {
+    font-size: 18px;
+    font-weight: 500;
+    color: #444;
+    letter-spacing: 0.5px;
+}
+
+/* 测试站标记（2026-08-11）：仅测试环境显示，与正式站区分 */
+.demo-badge {
+    margin-left: 8px;
+    padding: 1px 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    background: #d97706;
+    border-radius: 999px;
+    vertical-align: 2px;
+    line-height: 1.6;
+}
+
+.nav-brand .brand-icon {
+    width: 26px;
+    height: 26px;
+    background: var(--accent);
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 14px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 4px;
+}
+
+.nav-link {
+    padding: 4px 14px;
+    border-radius: var(--radius-sm);
+    color: var(--text);          /* 2026-08-30 只加深不加粗：#666 灰在烟纹底上发虚 */
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.15s;
+}
+
+.nav-link:hover {
+    color: var(--text);
+    background: var(--table-hover);
+    text-decoration: none;
+}
+
+.nav-link.active {
+    color: var(--accent);
+    background: var(--accent-soft);
+}
+
+.nav-right {
+    margin-left: auto;
+    margin-right: -10px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.nav-right .nav-link {
+    padding: 4px 9px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text);          /* 与主链接同步加深（2026-08-30，字重不变） */
+}
+
+.nav-right .nav-link:hover {
+    color: var(--text);
+    background: var(--table-hover);
+}
+
+.nav-social {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+.nav-social-icon {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+}
+
+/* ── Main Container ── */
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 28px 24px;   /* 顶部间距并入 body padding-top（2026-08-30 收紧导航下间隔） */
+}
+
+/* ── Stats Row (Fluent Design Cards) ── */
+.stats-row {
+    display: grid;
+    grid-template-columns: minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);   /* minmax(0,·)：卡内容最小宽不许撑破网格（430px 手机实测 1fr 被 min-content 撑到 670px 横滚） */
+    gap: 16px;              /* 卡间 16px（2026-08-30 黄金阶梯：14→16） */
+    margin-bottom: 26px;    /* 区块间 26px（20→26，与卡间 16 成 1:1.6 黄金比） */
+    align-items: stretch;
+    --stat-first-row-h: 26px;   /* 三卡第一行统一高度（2026-08-11），改一处联动 */
+}
+/* 卡片两行（2+1）与导航图标化同步变档（2026-08-30 三档形态第一档） */
+@media (max-width: 1000px) {
+    .stats-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    /* 兜底（2026-08-30）：两列轨道出现 272.5px 小数宽时 Chromium 滚动区取整产生幻影横滚
+       （600px 实测页面多滚 4px、无任何元素超界）。clip 不产生滚动容器，纵向滚动不受影响；
+       挂 html 不挂 body——body 的 clip 不会传播到视口（Chromium 实测仍可滚 4px） */
+    html {
+        overflow-x: clip;
+    }
+
+    /* 导航次项图标化：GitHub/小黑盒/B站 只留图标（悬停 title 保留名称），赞助是 CTA 保留文字 */
+    .nav-social .nav-social-text { display: none; }
+    .nav-social { padding: 9px 8px; }
+}
+
+.stat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 18px 22px;
+    box-shadow: var(--card-shadow);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    transition: box-shadow 0.2s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-card:hover {
+    box-shadow: var(--card-hover-shadow);
+    transform: translateY(-1px);
+}
+
+/* 等高原型：卡1 内容最多撑起行高（2026-08-11 取消卡2/3 撑开，内容紧凑防中空） */
+
+.stat-card .value {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    font-variant-numeric: tabular-nums;
+}
+
+.stat-card .label {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-top: 3px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.stat-card .sub-value {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 1px;
+}
+
+.stat-card.accent .value { color: var(--accent); }
+.stat-card.success .value { color: var(--success); }
+.stat-card.warn .value { color: var(--warn); }
+.stat-card.danger .value { color: var(--danger); }
+
+/* ── 顶部三卡片：行情摘要 / 网站状态 / 筛选与排序 ── */
+.summary-head {
+    font-size: 12px;
+    font-weight: 500;                /* 2026：表头/标签细字 */
+    color: var(--text-secondary);
+    letter-spacing: 0.2px;
+    margin-bottom: 10px;
+}
+
+.summary-value {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -1px;
+}
+.summary-value.excellent { color: var(--ratio-excellent); }
+.summary-value.good { color: var(--ratio-good); }
+.summary-value.normal { color: var(--ratio-normal); }
+.summary-value.warn { color: var(--ratio-warn); }
+.summary-value.bad { color: var(--ratio-bad); }
+
+/* 卡2 当前最优折扣 + 饰品名（2026-08-10：从卡1走势图下方移来，数字配色按档位） */
+.bp-value {
+    font-size: 24px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: var(--success);
+}
+.bp-value.excellent { color: var(--ratio-excellent); }
+.bp-value.good { color: var(--ratio-good); }
+.bp-value.normal { color: var(--ratio-normal); }
+.bp-value.bad { color: var(--ratio-bad); }
+
+/* 折线走势图 */
+.trend-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    margin-top: 0;
+    height: var(--stat-first-row-h);   /* 三卡第一行等高基准（2026-08-11） */
+}
+.trend-caption {
+    font-size: 13px;
+    color: var(--text-muted);
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.trend-toggle {
+    display: inline-flex;
+    gap: 4px;
+    flex-shrink: 0;
+}
+.trend-toggle a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;              /* 4 个等宽（与平台气泡同一套） */
+    height: 26px;             /* 与平台气泡等高 */
+    padding: 0 8px;
+    border-radius: 8px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    background: #fff;
+    border: 1px solid var(--border);
+    transition: all 0.15s;
+    white-space: nowrap;
+    text-decoration: none;
+}
+.trend-toggle a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    text-decoration: none;
+}
+.trend-toggle a.active {
+    color: var(--accent);
+    background: #fff;
+    border-color: var(--accent);
+    font-weight: 600;
+}
+.trend-chart {
+    width: 100%;
+    margin: 6px 0 0;
+}
+.trend-svg {
+    display: block;
+    width: 100%;
+    height: 56px;
+    color: var(--text-muted);
+}
+/* 折线颜色 = 当前值档位色（与全站 tag 语义一致：低=绿划算） */
+.trend-svg.excellent { color: var(--ratio-excellent); }
+.trend-svg.good { color: var(--ratio-good); }
+.trend-svg.normal { color: var(--ratio-normal); }
+.trend-svg.warn { color: var(--ratio-warn); }
+.trend-svg.bad { color: var(--ratio-bad); }
+/* 划算阈值背景带 + 参考线 */
+.trend-svg .zone.cheap { fill: rgba(13,115,13,0.10); }
+.trend-svg .zone.mid   { fill: rgba(161,98,7,0.10); }
+.trend-svg .zone.dear  { fill: rgba(194,65,12,0.10); }
+.trend-svg .thr {
+    stroke: #d6d6d6;
+    stroke-width: 1;
+    stroke-dasharray: 3 3;
+    vector-effect: non-scaling-stroke;
+}
+.trend-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 4px;
+}
+.trend-range {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+.trend-range b {
+    color: var(--text);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+/* Δ 变化徽标（白底描边，与全站气泡统一） */
+.delta {
+    font-size: 11px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    padding: 2px 8px;
+    border-radius: 8px;
+    white-space: nowrap;
+    background: #fff;
+    border: 1px solid var(--border);
+}
+.delta.down { color: var(--ratio-excellent); border-color: color-mix(in srgb, var(--ratio-excellent) 32%, transparent); }
+.delta.up { color: var(--ratio-warn); border-color: color-mix(in srgb, var(--ratio-warn) 32%, transparent); }
+.delta.flat { color: var(--text-muted); }
+/* 阈值图例（复用 B 层徽章语言） */
+.trend-legend {
+    display: flex;
+    justify-content: flex-start;
+    gap: 16px;
+    margin-top: auto;
+    padding-top: 5px;
+    flex-wrap: wrap;
+}
+.lg-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;          /* 与平台名（pc-item）同字号，2026-08-11 */
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+/* 档位数值（<0.65 等）：与平台更新时间（pc-time）同字号 */
+.lg-value {
+    font-size: 11px;
+    margin-left: 2px;
+}
+.lg-swatch {
+    width: 8px;
+    height: 8px;
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+.lg-item.cheap .lg-swatch { background: var(--ratio-excellent); }
+.lg-item.mid .lg-swatch { background: var(--ratio-normal); }
+.lg-item.dear .lg-swatch { background: var(--ratio-warn); }
+
+/* 平台覆盖 */
+.platform-cover {
+    display: flex;
+    align-items: center;
+    gap: 6px;                /* 2026-08-30：8→6px。真 Medium 字重上线后字形比伪粗宽 ~3px，压线 410 vs 407 复发折行；再挤 6px 留 ~6px 余量（08-29 曾 10→8px 同款问题） */
+    margin-top: auto;
+    padding-top: 16px;
+    flex-wrap: wrap;
+}
+.pc-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+.pc-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text);
+}
+.pc-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+.pc-dot.uuyp { background: var(--pf-uuyp); }
+.pc-dot.buff { background: var(--pf-buff); }
+.pc-dot.steam { background: var(--pf-steam); }
+/* 平台更新时间（合并进平台覆盖行，小灰字跟随平台名，2026-08-10） */
+.pc-time {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-left: 1px;    /* 2026-08-30：2→1px，配合平台覆盖行 gap 收窄防复发折行 */
+}
+/* 窄卡防折行（2026-08-29）：容器 1440 封顶，窗口 <~1480 时卡内宽 <~407px，
+   "平台覆盖"行（标签+3平台+3时间戳）放不下折成两行 → 三卡被等高拉伸、底部出空隙。
+   窄窗口隐藏时间戳保单行；宽窗口照常显示 */
+@media (max-width: 1480px) {
+    .platform-cover .pc-time { display: none; }
+}
+
+/* 当前最优标的（纯文字行，不占满、无底色） */
+.best-pick {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-top: 35px;
+    text-decoration: none;
+}
+.best-pick:hover {
+    text-decoration: none;
+}
+.best-pick:hover .bp-name {
+    color: var(--accent);
+}
+.bp-label {
+    font-size: 15px;
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+.bp-name {
+    font-size: 18px;
+    color: var(--text);
+    font-weight: 500;
+}
+.bp-ratio {
+    font-size: 12px;
+    color: var(--success);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+.metric-grid {
+    display: flex;
+    gap: 30px;
+    margin-top: -6px;   /* 视觉微调：数字行文字顶部对齐表头（2026-08-11 实测差 1px→再提 3px） */
+}
+.metric {
+    flex: 1;
+    min-width: 0;
+}
+.metric .value {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+.metric .label {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-top: 8px;
+    font-weight: 400;
+}
+
+.filter-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+.filter-row:last-child {
+    margin-bottom: 0;
+}
+/* 卡3 第一行位置微调（2026-08-11：气泡 32px 自然高，行距 18px，总高不超卡1） */
+.stat-card > .filter-row:first-child {
+    margin-top: 1px;    /* 卡3 整体下移 1px（2026-08-11 观感微调） */
+}
+/* 筛选标签（2026-08-11：图标已嵌入 chip 气泡，标签保持纯文字） */
+.filter-label {
+    font-size: 16px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    flex-shrink: 0;
+    min-width: 28px;
+}
+
+.platform-chips {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    flex: 1;
+    min-width: 0;
+}
+
+/* 游戏筛选 2×2 网格（窄卡片放不下 4 个气泡时固定两行） */
+.chips-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    flex: 1;
+    min-width: 0;
+}
+
+/* 卡2 枢纽卡：首页/行情 导航 */
+.hub-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+.hub-nav-link {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    transition: color 0.15s;
+}
+.hub-nav-link:hover {
+    color: var(--accent);
+    text-decoration: none;
+}
+.hub-nav-sep {
+    color: var(--border);
+    font-size: 12px;
+}
+.chip {
+    flex: 0 1 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    height: 32px;           /* 内容自然高，长宽比接近角标（2026-08-11 方案A） */
+    padding: 0 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: rgba(0,0,0,0.045);   /* 2026-08-30 灰底成泡：hairline 白底在玻璃卡上隐形，统一表格徽章同款灰底语言 */
+    border: 1px solid transparent;
+    transition: all 0.15s;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+/* chip 气泡内嵌的平台/游戏小图标（2026-08-11） */
+.chip-ico {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+.chip:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    text-decoration: none;
+}
+.chip.active {
+    color: var(--accent);
+    background: #fff;
+    border-color: var(--accent);
+    font-weight: 600;
+}
+/* 游戏/平台 chip active 用品牌色（白底 + 品牌色描边，与表格徽章呼应） */
+.chip.active.game-csgo { color: var(--game-csgo); border-color: var(--game-csgo); background: #fff; }
+.chip.active.game-tf2 { color: var(--game-tf2); border-color: var(--game-tf2); background: #fff; }
+.chip.active.game-dota2 { color: var(--game-dota2); border-color: var(--game-dota2); background: #fff; }
+.chip.active.pf-buff { color: var(--pf-buff); border-color: var(--pf-buff); background: #fff; }
+.chip.active.pf-uuyp { color: var(--pf-uuyp); border-color: var(--pf-uuyp); background: #fff; }
+
+/* 排序自定义下拉（2026-08-11，DeepSeek 风格：胶囊触发 + 浮层面板；保留本站白底描边特色） */
+.dd {
+    position: relative;
+    display: inline-flex;
+}
+.dd-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    height: 32px;
+    padding: 0 12px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: rgba(0,0,0,0.045);   /* 与 chip 同款灰底（2026-08-30 成泡修复） */
+    color: var(--text);
+    font-size: 15px;
+    font-family: var(--font);
+    cursor: pointer;
+    transition: border-color 0.15s;
+    min-width: 108px;
+}
+.dd-trigger:hover {
+    border-color: var(--accent);
+}
+.dd-arrow {
+    flex-shrink: 0;
+    color: var(--accent);
+    transition: transform 0.15s;
+}
+.dd.open .dd-arrow {
+    transform: rotate(180deg);
+}
+/* 下拉展开时整卡提到最上层（backdrop-filter 形成层叠上下文，菜单会被后续表格卡盖住，2026-08-11） */
+.stat-card:has(.dd.open) {
+    z-index: 60;
+}
+.dd-menu {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    z-index: 50;
+    min-width: 100%;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    padding: 4px;
+}
+.dd-item {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 6px 12px;
+    border: none;
+    background: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: var(--font);
+    color: var(--text);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.12s;
+}
+.dd-item:hover {
+    background: var(--table-hover);
+}
+.dd-item.active {
+    background: var(--accent-soft);
+    color: var(--accent);
+}
+
+/* ── 表头点击排序 ── */
+.th-sort {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.15s;
+}
+.th-sort:hover {
+    color: var(--accent);
+    text-decoration: none;
+}
+.th-sort.active {
+    color: var(--accent);
+}
+.sort-arrow {
+    font-size: 9px;
+    color: var(--accent);
+}
+
+/* ── Main Card (Table Container) ── */
+.main-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    box-shadow: var(--card-shadow);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    overflow: hidden;
+}
+
+/* ── Table ── */
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* 行情列表铺满卡片：table-layout:fixed 严格按列宽分配，名称列固定宽不被内容撑开，
+   其余列均分剩余空间，避免右侧大段空白（之前 width:auto 收窄导致右侧空 280px） */
+.item-table {
+    width: 100%;
+    table-layout: fixed;
+    /* 窄视口兜底（2026-08-23）：fixed 布局下未设宽的列会被均分塌到 30-40px（730px 视口实测），
+       设最小宽度 → 表格超宽时由 .table-wrap 横向滚动，列不塌、数据可读 */
+    min-width: 1024px;
+}
+.item-table th:nth-child(1),
+.item-table td:nth-child(1) {
+    width: 240px;
+}
+/* 更新时间单行显示：加宽 + 不换行（2026-08-11，字号 +2 后同步加宽） */
+.item-table th:nth-child(8),
+.item-table td:nth-child(8) {
+    width: 170px;
+    white-space: nowrap;
+}
+/* 表格数据字号（2026-08-11）：除名称列外全部 15px，与表头一致 */
+.item-table tbody td:not(.col-name) {
+    font-size: 15px;
+}
+
+th {
+    text-align: left;
+    padding: 11px 14px;
+    font-size: 15px;                 /* 2026-08-30 回退生产站基准：15px/600（曾被改 13px/500"细字小号"，表头和数据一样大） */
+    font-weight: 600;
+    color: var(--text-secondary);
+    letter-spacing: 0.2px;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+    background: rgba(0,0,0,0.015);
+}
+
+/* 数字列对齐（2026-08-30 回退）：旧"右对齐 TradingView 风格"规则已删，恢复生产站居中格式；
+   模板 td 自带 inline center + tabular-nums */
+
+td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+}
+
+/* 斑马纹已删（2026-08-30）：玻璃本身透进烟雾纹理，叠斑马是双重噪声；hairline+hover 足够扫读 */
+
+tr:hover td {
+    background: var(--table-hover);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* 手机横滚时首列（饰品名）固定（2026-08-30 移动适配，NNGroup 移动表格建议）：
+   静止时与其他列完全一致（透明，零色差，用户定稿）；
+   仅当表格横向滚动后（main.js 给 .table-wrap 打 .is-scrolled）才浮起盖层：
+   盖板 = var(--card-bg) 跟随主题（叠加合成 ≈ rgb(247,248,253) 与表格本色同调，
+   普鲁士蓝/烟纹紫等点缀色不参与），backdrop-filter 把底下 18% 残影糊掉；
+   右缘阴影同步只在滚动后出现，兼作可滑提示 */
+.item-table th:first-child,
+.item-table td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+}
+.table-wrap.is-scrolled .item-table th:first-child,
+.table-wrap.is-scrolled .item-table td:first-child {
+    background: var(--card-bg);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    box-shadow: 6px 0 8px -6px rgba(0,0,0,0.12);
+}
+
+/* ── Tags / Badges ──（统一白底描边：白底 + 彩色柔和描边 + 彩色文字，圆角 8px） */
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    padding: 2px 10px;
+    border-radius: 8px;
+    font-weight: 500;
+    white-space: nowrap;
+    background: #fff;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+}
+
+/* 平台徽章（2026-08-30 去色 + 灰底成泡：hairline 边在玻璃卡上隐形致"泡融进卡"；
+   改浅灰填充造实体感，识别职责交给彩色圆标，容器保持中性） */
+/* ghost 形态（2026-08-30 用户定稿）：去灰底，透明底 + 品牌彩图标 + 中性文字，
+   hover 浮浅底表态；品牌图标本身就是入口暗示，颜色堆砌更少 */
+.tag.platform-buff,
+.tag.platform-uuyp,
+.tag.platform-steam {
+    color: var(--text);
+    background: transparent;
+    border-color: transparent;
+    text-decoration: none;
+    transition: background-color .15s;
+}
+.tag.platform-buff:hover,
+.tag.platform-uuyp:hover,
+.tag.platform-steam:hover {
+    background: rgba(0,0,0,0.05);
+    border-color: transparent;
+}
+
+/* 平台气泡统一尺寸（2026-08-11）：交易平台等宽、与 Steam 等高，整体加高；收窄内边距去空 */
+.tag.platform-buff,
+.tag.platform-uuyp {
+    justify-content: center;
+    width: 70px;
+    height: 30px;
+    padding: 2px 8px;
+}
+.tag.platform-steam {
+    justify-content: center;
+    height: 30px;
+    padding: 2px 8px;
+}
+
+/* 表内平台/Steam 气泡内容（2026-08-31 放大一档：文字 14px、图标 17px，高 30px 继承上面） */
+.item-table .tag.platform-buff,
+.item-table .tag.platform-uuyp,
+.item-table .tag.platform-steam {
+    font-size: 14px;
+}
+.item-table .pf-icon-img,
+.item-table .pf-icon-steam {
+    width: 17px;
+    height: 17px;
+}
+
+/* 平台真实图标（2026-08-11：字母徽章 → 官网图标，圆角方形裁切统一三平台） */
+.pf-icon-img {
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* Steam 官方图标（官网 favicon 高清版，蓝渐变圆底白 logo；与平台图标同形裁切） */
+.pf-icon-steam {
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* 游戏 tag（2026-08-30 去色：纯灰小字，去药丸彩底彩字——满列重复的橙色竖条纹主因）
+   作用域限定首页表格；详情页标签是独立信息（标题旁），需要可见胶囊（见下条） */
+.item-table .tag.cs2,
+.item-table .tag.csgo,
+.item-table .tag.tf2,
+.item-table .tag.dota2 {
+    background: transparent;
+    border-color: transparent;
+    color: var(--text-muted);
+    padding: 0;   /* 药丸内边距残留会让"CS2 · 别名"点前多出一段空（2026-08-30 用户点名） */
+}
+
+/* 详情页标签（2026-08-30 用户定稿"标签拆分"）：标题旁独立可见的透明细边框胶囊，
+   中性灰 = 角色标记（CS2/品质/稀有度），与"基准"徽标同语言 */
+.item-title .tag {
+    background: transparent;
+    border-color: var(--border);
+    color: var(--text-secondary);
+    align-self: center;
+}
+
+.tag.excellent {
+    background: #fff;
+    color: var(--ratio-excellent);
+    border-color: color-mix(in srgb, var(--ratio-excellent) 30%, transparent);
+}
+
+.tag.good {
+    background: #fff;
+    color: var(--ratio-good);
+    border-color: color-mix(in srgb, var(--ratio-good) 30%, transparent);
+}
+
+.tag.normal {
+    background: #fff;
+    color: var(--ratio-normal);
+    border-color: color-mix(in srgb, var(--ratio-normal) 32%, transparent);
+}
+
+.tag.warn {
+    background: #fff;
+    color: var(--ratio-warn);
+    border-color: color-mix(in srgb, var(--ratio-warn) 30%, transparent);
+}
+
+.tag.bad {
+    background: #fff;
+    color: var(--ratio-bad);
+    border-color: color-mix(in srgb, var(--ratio-bad) 30%, transparent);
+}
+
+.tag.none {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+}
+
+/* 余额比例：去气泡后纯数字 + 档位色（2026-08-11 试看效果） */
+.ratio-num.excellent { color: var(--ratio-excellent); }
+.ratio-num.good { color: var(--ratio-good); }
+.ratio-num.normal { color: var(--ratio-normal); }
+.ratio-num.warn { color: var(--ratio-warn); }
+.ratio-num.bad { color: var(--ratio-bad); }
+
+/* about 页比例说明文字色（与 tag 档位一致） */
+.excellent-text { color: var(--success); }
+.good-text { color: #5f8a30; }
+.normal-text { color: var(--ratio-normal); }
+.warn-text { color: var(--ratio-warn); }
+.bad-text { color: var(--ratio-bad); }
+
+/* ── Price cells ── */
+.platform-cell {
+    text-align: center;
+    min-width: 95px;
+}
+
+.platform-price {
+    font-size: 13px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+.ratio-value {
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.ratio-value.excellent { color: var(--success); }
+.ratio-value.good { color: #5f8a30; }
+.ratio-value.normal { color: #a16207; }
+.ratio-value.warn { color: #c2410c; }
+.ratio-value.bad { color: var(--danger); }
+
+.steam-price {
+    font-size: 13px;
+    font-variant-numeric: tabular-nums;
+    display: block;
+}
+
+.steam-price .label {
+    color: var(--text-muted);
+    font-size: 10px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.steam-price .num {
+    color: var(--text);
+    font-weight: 500;
+}
+
+/* ── Item name cell ── */
+.col-name {
+    min-width: 200px;
+    max-width: 320px;
+}
+/* 表头专用：文字左对齐，缩进对齐下面中文名字（图片 14px + 36px 宽 + 10px gap = 60px）。
+   注意只作用于 th——td 也带 col-name class，若共改会把图片也推到 60px */
+th.col-name {
+    text-align: left;
+    padding-left: 60px;
+}
+
+.item-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.item-thumb {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    border-radius: 6px;
+    flex-shrink: 0;
+    background: rgba(0,0,0,0.04);
+}
+
+.item-text {
+    min-width: 0;
+    text-align: left;
+}
+
+/* 可点击语言（2026-08-30 用户定稿）：名称平时中性正文色，hover 颜色过渡到主题蓝；
+   不用下划线（用户点名 Word 式落后），可点性由整行 cursor + hover 变色兜底 */
+.item-name-link {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--text);
+    transition: color .15s;
+}
+.item-name-link:hover {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.detail-thumb {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    border-radius: 8px;
+    flex-shrink: 0;
+    background: rgba(0,0,0,0.04);
+}
+
+.item-name {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 280px;
+}
+
+.item-sub {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 2px;
+    min-width: 0;
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+/* CS2 与英文别名间的分隔点：负边距收紧两侧空隙（flex gap 6 会让"CS2 · hash"松散，2026-08-30） */
+.sub-dot {
+    margin: 0 -3px;
+    color: var(--text-muted);
+}
+
+.sub-hash {
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.col-volume {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    color: var(--text-secondary);
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+/* ── Toolbar / Filter ── */
+.toolbar {
+    display: flex;
+    gap: 10px;
+    padding: 14px 18px;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+}
+
+.toolbar select {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 6px 10px;
+    color: var(--text);
+    font-size: 13px;
+    font-family: var(--font);
+    outline: none;
+    cursor: pointer;
+}
+
+.toolbar select:focus {
+    border-color: var(--accent);
+}
+
+.chk-wrap {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    user-select: none;
+}
+
+.chk-wrap input {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    accent-color: var(--accent);
+}
+
+/* ── Empty state ── */
+.empty-state {
+    text-align: center;
+    padding: 64px 24px;
+}
+
+.empty-state .icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.empty-state p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* ── Pagination ── */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 24px 0;
+}
+
+.pagination .page-link {
+    padding: 7px 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.15s;
+    background: #fff;
+}
+
+.page-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.page-info {
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+/* ── Buttons ── */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s;
+    background: #fff;
+    color: var(--text);
+    font-family: var(--font);
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    text-decoration: none;   /* 全局 a:hover 下划线会漏到按钮上（Word 超链接既视感），2026-08-30 用户点名 */
+}
+
+.btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+}
+
+.btn.primary:hover {
+    background: var(--accent-hover);
+}
+
+.btn.danger { color: var(--danger); }
+.btn.danger:hover {
+    border-color: var(--danger);
+    background: var(--danger-soft);
+}
+
+.btn.sm { padding: 4px 10px; font-size: 12px; border-radius: var(--radius-sm); }
+
+/* ── 大详情页价格走势 ──
+   2026-08-30 用户定稿：详情页卡片与首页统一玻璃材质（0.82 + 白边 + blur + 同配方阴影） */
+.chart-line-wrap {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    box-shadow: var(--card-shadow);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    padding: 18px 22px;
+    margin-bottom: 26px;    /* 区块间 26px（2026-08-30 黄金阶梯统一，原 24） */
+}
+
+/* ── Detail Page ── */
+.breadcrumb {
+    margin-bottom: 16px;
+}
+
+.breadcrumb a {
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.breadcrumb a:hover {
+    color: var(--accent);
+}
+
+.item-header {
+    margin-bottom: 24px;
+}
+
+.item-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.item-title h1 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+.item-meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.meta-tag {
+    padding: 3px 10px;
+    background: var(--table-hover);
+    border-radius: 12px;
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.price-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.price-card {
+    background: #fff;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.price-card:hover {
+    border-color: var(--accent);
+}
+
+.price-card.steam .card-header {
+    background: var(--accent-soft);
+}
+
+.card-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.card-header h2 {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.platform-icon {
+    font-size: 16px;
+}
+
+.card-body {
+    padding: 14px 16px;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.price-row .label {
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+.price-row .value {
+    font-weight: 600;
+    font-size: 14px;
+    font-variant-numeric: tabular-nums;
+}
+
+.price-row.dim .value {
+    color: var(--text-muted);
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.value.ratio.excellent { color: var(--success); }
+.value.ratio.good { color: #5f8a30; }
+.value.ratio.normal { color: #a16207; }
+.value.ratio.warn { color: #c2410c; }
+.value.ratio.bad { color: var(--danger); }
+
+.summary-bar {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 22px;
+    border-radius: var(--radius);
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    background: #fff;
+    border: 1px solid var(--border);
+    box-shadow: var(--card-shadow);
+}
+
+.summary-bar.excellent {
+    border-color: rgba(16, 124, 16, 0.3);
+    background: rgba(16, 124, 16, 0.04);
+}
+
+.summary-bar.good {
+    border-color: rgba(130, 177, 80, 0.3);
+    background: rgba(130, 177, 80, 0.04);
+}
+
+.summary-bar.normal {
+    border-color: rgba(202, 138, 4, 0.3);
+    background: rgba(202, 138, 4, 0.04);
+}
+
+.summary-bar.warn {
+    border-color: rgba(234, 88, 12, 0.3);
+    background: rgba(234, 88, 12, 0.04);
+}
+
+.summary-bar.bad {
+    border-color: rgba(209, 52, 56, 0.3);
+    background: rgba(209, 52, 56, 0.04);
+}
+
+.summary-label {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.summary-value {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    font-variant-numeric: tabular-nums;
+}
+
+.summary-bar.excellent .summary-value { color: var(--ratio-excellent); }
+.summary-bar.good .summary-value { color: var(--ratio-good); }
+.summary-bar.normal .summary-value { color: var(--ratio-normal); }
+.summary-bar.warn .summary-value { color: var(--ratio-warn); }
+.summary-bar.bad .summary-value { color: var(--ratio-bad); }
+
+.summary-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-left: auto;
+}
+
+.info-section {
+    background: var(--card-bg);             /* 玻璃（2026-08-30）：与首页数据卡同材质 */
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+}
+
+.info-section h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.info-section p {
+    color: var(--text-secondary);
+    font-size: 13px;
+    margin-bottom: 5px;
+    line-height: 1.7;
+}
+
+/* ── About Page ── */
+.about-card {
+    max-width: 760px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: var(--radius-lg);
+    padding: 36px 40px;
+    border: 1px solid var(--border);
+    box-shadow: var(--card-shadow);
+}
+
+.about-card h1 {
+    font-size: 24px;
+    margin-bottom: 28px;
+    font-weight: 700;
+}
+
+.about-card section {
+    margin-bottom: 28px;
+}
+
+.about-card section:last-child {
+    margin-bottom: 0;
+}
+
+.about-card h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.about-card p, .about-card li {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    text-align: justify;
+    text-justify: inter-character;
+}
+
+.about-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-card li {
+    padding: 4px 0;
+    padding-left: 16px;
+    position: relative;
+}
+
+.about-card li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+/* ── Segmented Control ── */
+.seg-group {
+    display: inline-flex;
+    gap: 2px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 2px;
+}
+
+.seg {
+    padding: 5px 12px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: var(--font);
+    transition: all 0.15s;
+}
+
+.seg:hover {
+    color: var(--text);
+    background: rgba(0,0,0,0.04);
+}
+
+.seg.active {
+    background: var(--accent);
+    color: #fff;
+}
+
+/* ── Tabs ── */
+.tabs {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 20px;
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 4px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+}
+
+.tab {
+    padding: 7px 18px;
+    cursor: pointer;
+    color: var(--text-secondary);
+    border-radius: var(--radius-sm);
+    transition: all 0.15s;
+    font-size: 13px;
+    font-weight: 500;
+    user-select: none;
+}
+
+.tab:hover { color: var(--text); background: var(--table-hover); }
+.tab.active { color: #fff; background: var(--accent); }
+.tab .badge {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 18px; height: 18px; padding: 0 5px; border-radius: 9px;
+    font-size: 10px; font-weight: 600; background: var(--danger); color: #fff;
+}
+
+/* ── Footer ──（2026-08-30 用户定稿：无边界极简页脚——去通栏 hairline（与玻璃卡语言不搭），
+   只留落款淡字 + 加大上方留白，Apple/Vercel 式安静收尾 */
+footer {
+    margin-top: 64px;
+    padding: 24px 28px;
+}
+
+.footer-content {
+    max-width: 1440px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-content p {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.footer-brand {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.footer-sub {
+    font-size: 12px !important;
+    margin-top: 4px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    /* 导航永不折行（2026-08-30 三档形态：≤1000 图标化，宽度足够单行）；
+       宽度对齐 container 12px 边距（旧 56px 是桌面 28px 边距口径，折行时药丸比卡片窄 32px） */
+    nav {
+        padding: 0 14px;
+        gap: 8px;
+        width: calc(100% - 24px);
+    }
+
+    .nav-search {
+        display: none;
+    }
+
+    .nav-link {
+        padding: 9px 10px;    /* 触控目标 ≥40px（Apple HIG 44pt 量级，2026-08-30 移动适配） */
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 14px 12px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    td, th {
+        padding: 8px 10px;
+    }
+
+    .col-name {
+        min-width: 140px;
+    }
+
+    .col-platform {
+        display: none;
+    }
+
+    .price-overview {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-bar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .summary-desc {
+        margin-left: 0;
+    }
+
+    .about-card {
+        padding: 24px 20px;
+    }
+
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* ============================================================
+   详情页 v2 — 市场比价（多平台可扩展聚合卡片）+ 核心指标条
+   ============================================================ */
+/* 更新时间（值在上标签在下，与首页卡2 metric 同款规格） */
+.metric-updated-value {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+/* 核心指标条 */
+.metric-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    background: #fff;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--card-shadow);
+    padding: 18px 20px;
+    margin-bottom: 24px;
+}
+
+/* 走势主卡内的核心指标条（并入主卡，无独立卡片边框） */
+.metric-bar {
+    /* 2026-08-30 用户定稿：与首页卡2 metric-grid 完全同款——flex 等宽区块、固定 30px 间距、全部左对齐。
+       时间戳最长，列宽给 1.3 倍防折行（数值字号与其余区块一致） */
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    padding: 6px 0 14px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--table-hover);
+}
+
+.metric-bar > * {
+    flex: 1;
+    min-width: 0;
+}
+
+.metric-bar .metric-updated {
+    flex: 1.3;
+}
+
+.metric-bar .metric {
+    padding: 6px 0;
+}
+
+.metric-hero {
+    padding: 6px 0;
+}
+
+.metric-hero-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-top: 3px;
+}
+
+/* 指标行 5 区块（2026-08-30 用户定稿：值在上、标签在下，两行封顶）：
+   注脚行（主平台/最低在售/24h/数据快照）删除——三排叠罗汉即丑的根源；
+   余额比例档位徽章贴大数字右侧同行（小气泡配大数字，pf-ratio-tag 同语言） */
+.metric-hero-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.metric-hero-value {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    line-height: 1.2;
+}
+
+.metric-hero-value.excellent { color: var(--ratio-excellent); }
+.metric-hero-value.good { color: var(--ratio-good); }
+.metric-hero-value.normal { color: var(--ratio-normal); }
+.metric-hero-value.warn { color: var(--ratio-warn); }
+.metric-hero-value.bad { color: var(--ratio-bad); }
+
+.metric {
+    padding: 10px 4px;
+}
+
+.metric-value {
+    font-size: 28px;    /* 2026-08-30：与首页卡2 value 同款（28px/600） */
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.2;
+}
+
+.metric-label {
+    font-size: 14px;    /* 与首页卡2 label 同款（14px，首页 8px 间距这里压 3px） */
+    color: var(--text-secondary);
+    margin-top: 3px;
+    font-weight: 400;
+}
+
+/* 平台聚合卡片 */
+.section {
+    margin-bottom: 26px;    /* 区块间 26px（2026-08-30 黄金阶梯统一，原 24） */
+}
+
+.section-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.section-sub {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.pf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 16px;              /* 卡间 16px，与首页 stats-row 同档（2026-08-30） */
+}
+
+.pf-card {
+    background: var(--card-bg);             /* 玻璃（2026-08-30）：与首页数据卡同材质 */
+    border-radius: var(--radius);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.pf-card:hover {
+    border-color: var(--accent);
+    box-shadow: var(--card-hover-shadow);
+}
+
+/* 平台卡浮起与头部卡片同语言（幅度克制 -2px，数据站不做大跳）；
+   包 hover:hover——触屏没有悬停，tap 粘住 :hover 会浮着不落 */
+@media (hover: hover) {
+    .pf-card:hover { transform: translateY(-2px); }
+}
+
+.pf-card-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--table-hover);
+}
+
+.pf-card-name {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* 卡头右上角的平台跳转按钮：普通颜色、靠右、略高 */
+.pf-card-head .btn.pf-link {
+    margin-left: auto;
+    padding: 7px 14px;
+}
+
+/* 平台卡头图标（2026-08-11：字母徽章 → 真实平台图标） */
+.pf-badge-img {
+    width: 24px;
+    height: 24px;
+    border-radius: 7px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* 基准徽标（2026-08-11）：跟「比例」标签同尺寸（12px/3px-10px/圆角6px），保留描边风格
+   2026-08-30 换中性灰：基准是角色标记不是比例数值，此前穿 --ratio-normal 土黄（语义错位且丑），
+   与详情页标签胶囊统一为"灰 hairline = 角色"语言 */
+.pf-bench {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 3px 10px;
+    margin-left: 6px;
+    white-space: nowrap;
+}
+
+.pf-card-body {
+    padding: 12px 14px;
+}
+
+.pf-data {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.pf-data-item {
+    flex: 1;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 4px;
+    background: var(--table-hover);
+    border-radius: 6px;
+    padding: 5px 8px;
+}
+
+.pf-data-label {
+    font-size: 11px;
+    color: var(--text-secondary);
+}
+
+.pf-data-value {
+    font-size: 13px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+/* 更新时间数值（2026-08-30 用户点名）：与卡内其他数值统一规格（13px/700 深色），
+   此前 11px/500 灰——同一排小灰条里两种强调不协调 */
+.pf-data-value.pf-updated {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+/* 比例小气泡（2026-08-30 用户定稿）：去 12% 彩底填充，改透明底 + 档位色细边框（currentColor）——
+   与大数字气泡/基准徽标统一为"透明细边框气泡"语言，颜色只表达比例档位 */
+.pf-ratio-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 6px;
+    border: 1px solid currentColor;
+}
+
+.pf-ratio-tag.excellent { color: var(--ratio-excellent); }
+.pf-ratio-tag.good { color: var(--ratio-good); }
+.pf-ratio-tag.normal { color: var(--ratio-normal); }
+.pf-ratio-tag.warn { color: var(--ratio-warn); }
+.pf-ratio-tag.bad { color: var(--ratio-bad); }
+
+.compare-note {
+    margin-top: 12px;
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.muted {
+    color: var(--text-muted);
+}
+
+/* 聚合走势组件 */
+.trend-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.trend-switch {
+    display: flex;
+    gap: 6px;
+}
+
+.trend-btn {
+    padding: 5px 14px;
+    font-size: 12px;
+    border: 1px solid var(--border);
+    background: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: all 0.15s;
+}
+
+.trend-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* 白底彩边（跟首页 chip 一致）：激活 = 平台描边色，选中态不填充。
+   颜色对齐走势图折线：全部=accent 主题蓝 / Steam=浅蓝 / 悠悠=橙 / BUFF=黑 */
+.trend-btn.active {
+    color: var(--accent);
+    background: #fff;
+    border-color: var(--accent);
+    font-weight: 600;
+}
+.trend-btn.active.pf-steam { color: var(--pf-steam); border-color: var(--pf-steam); background: #fff; }
+.trend-btn.active.pf-uuyp  { color: var(--pf-uuyp); border-color: var(--pf-uuyp); background: #fff; }
+.trend-btn.active.pf-buff  { color: var(--pf-buff); border-color: var(--pf-buff); background: #fff; }
+/* 比例模式按钮：激活态用比例层级代表色（跟比例折线同色系） */
+.trend-btn.trend-mode.active { color: var(--ratio-good); border-color: var(--ratio-good); background: var(--ratio-good-soft); }
+.trend-btn.trend-mode:hover { color: var(--ratio-good); border-color: var(--ratio-good); }
+
+.trend-ctrl {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.trend-ctrl select {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 4px 10px;
+    color: var(--text);
+    font-size: 12px;
+    font-family: var(--font);
+    outline: none;
+    cursor: pointer;
+}
+
+.trend-legend {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.lg-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.lg-swatch {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+}
+
+.chart-line-wrap {
+    position: relative;
+    background: var(--card-bg);             /* 玻璃（2026-08-30）：此规则在文件后部覆盖上面那条，材质同步改 */
+    border-radius: var(--radius);
+    border: 1px solid var(--card-border);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    padding: 14px;
+}
+
+/* 详情页走势主卡卡头：商品信息（缩略图/名称/标签）+ 返回列表按钮，底部分隔线 */
+.detail-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+    margin-bottom: 6px;    /* 2026-08-30 用户点名：标题行与指标行之间空隙过大，14→6（加上指标行顶部 6px，合计 ~16px） */
+    border-bottom: 1px solid var(--table-hover);
+}
+
+.detail-card-head .item-title {
+    margin-bottom: 0;
+}
+
+/* 详情页右上角「返回列表」：整体大 3px（原 .btn 13px/7px14px → 16px/9px16px，2026-08-11） */
+.detail-card-head .btn {
+    font-size: 16px;
+    padding: 9px 16px;
+    border-radius: 6px;
+}
+
+.chart-line-wrap .trend-svg {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1152 / 320;
+    display: block;
+}
+
+.chart-line-wrap .trend-svg .grid {
+    stroke: #d9d9d9;
+    stroke-width: 1;
+}
+
+.chart-line-wrap .trend-svg .vgrid {
+    stroke: #eaeaea;
+    stroke-width: 1;
+}
+
+.chart-line-wrap .trend-svg .axis-label {
+    fill: var(--text-muted);
+    font-size: 10px;
+}
+
+.chart-line-wrap .trend-svg .line-label {
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.chart-line-wrap .trend-svg .axis-name {
+    font-weight: 600;
+    fill: var(--text-secondary);
+}
+
+.chart-line-wrap .trend-svg .hover-ref {
+    stroke: #999;
+    stroke-width: 1;
+    stroke-dasharray: 3 3;
+    vector-effect: non-scaling-stroke;
+}
+
+.chart-line-wrap .trend-svg .hover-dot {
+    stroke: #fff;
+    stroke-width: 1.5;
+    vector-effect: non-scaling-stroke;
+}
+
+/* 时间档位按钮组（周/月/年/总览，仿 Steam） */
+.trend-range {
+    display: flex;
+    gap: 6px;
+}
+
+/* hover 插针 tooltip */
+.trend-tip {
+    position: absolute;
+    z-index: 20;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    padding: 8px 12px;
+    font-size: 12px;
+    pointer-events: none;
+    max-width: 340px;
+}
+.tip-date {
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+    font-variant-numeric: tabular-nums;
+}
+.tip-row {
+    display: flex;
+    align-items: center;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+.tip-row b { color: var(--text); }
+.tip-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-right: 6px;
+}
+
+.trend-empty {
+    padding: 30px;
+    text-align: center;
+    color: var(--text-muted);
+    background: #fff;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+    .metric-strip {
+        grid-template-columns: 1fr 1fr;
+    }
+    .metric-hero {
+        grid-column: span 2;
+    }
+    .pf-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ── 首页趋势图（详情页样式 + hover 探针，紧凑尺寸适配 1/3 卡片）── */
+.home-chart-wrap {
+    position: relative;          /* 探针 tooltip 定位基准 */
+    margin-top: 4px;
+}
+.home-chart-wrap .trend-svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 500 / 170;    /* 覆盖 .trend-svg 的 height:56px */
+}
+.home-chart-wrap .trend-svg .grid {
+    stroke: #d9d9d9;
+    stroke-width: 1;
+}
+.home-chart-wrap .trend-svg .vgrid {
+    stroke: #eaeaea;
+    stroke-width: 1;
+}
+.home-chart-wrap .trend-svg .axis-label {
+    fill: var(--text-muted);
+    font-size: 14px;
+}
+.home-chart-wrap .trend-svg .hover-ref {
+    stroke: #999;
+    stroke-width: 1;
+    stroke-dasharray: 3 3;
+    vector-effect: non-scaling-stroke;
+}
+.home-chart-wrap .trend-svg .hover-dot {
+    stroke: #fff;
+    stroke-width: 1.5;
+    vector-effect: non-scaling-stroke;
+}
+
+/* ═══ 手机档 ≤480px（2026-08-30 移动适配，430×932 全面屏 CSS 视口实测）═══ */
+@media (max-width: 480px) {
+    /* 三统计卡改单列（第三档：一行三列 → 两行 → 三行，与导航紧凑档同步） */
+    .stats-row {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    /* 导航紧凑档：360px 小屏也保单行（图标档 + 缩 padding/字号 + 链接文字禁内折） */
+    nav {
+        padding: 0 10px;
+        gap: 4px;
+    }
+    .brand-cn {
+        font-size: 15px;
+    }
+    .nav-link {
+        padding: 7px 4px;
+        font-size: 13px;
+        white-space: nowrap;   /* 药丸内空间不足时链接文字不许折成两行（360 实测"首页"折行撑爆药丸） */
+    }
+    /* 赞助收成纯图标（用户理念：赞助是自愿点击，不吆喝；同时给品牌图标腾位）。
+       两列/三列档保留文字不动 */
+    .nav-right .nav-link:last-child span {
+        display: none;
+    }
+
+    /* 首页卡内指标间距收窄（30px 桌面档在 390px 卡内放不下） */
+    .metric-grid {
+        gap: 18px;
+    }
+
+    /* 详情页指标条 5 区块改 2 列网格，时间戳缩号防溢出（430 实测撑到 569px 横滚） */
+    .metric-bar {
+        display: grid;
+        grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+        gap: 10px 16px;
+    }
+    .metric-bar .metric-updated {
+        flex: none;
+        grid-column: 1 / -1;
+    }
+    .metric-hero-value,
+    .metric-value {
+        font-size: 24px;
+    }
+    .metric-updated-value {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    /* 行情表：隐藏更新时间列（低优信息，详情页有），最小宽度相应收窄 */
+    .item-table th:nth-child(8),
+    .item-table td:nth-child(8) {
+        display: none;
+    }
+    .item-table {
+        min-width: 860px;
+    }
+    /* 名称列 240px 占手机视口六成，收窄给数据列让位 */
+    .item-table th:nth-child(1),
+    .item-table td:nth-child(1) {
+        width: 170px;
+    }
+}

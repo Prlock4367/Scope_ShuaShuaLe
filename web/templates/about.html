@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}示波器刷刷乐 — 关于{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="about-card">
+        <h1>关于 示波器刷刷乐</h1>
+
+        <section>
+            <h2>这是什么</h2>
+            <p>示波器刷刷乐（Scope_ShuaShuaLe）是 RIGOL DS2102E 的网页控制台：打开浏览器就能看波形、读测量值、一键记录，不用装上位机软件。</p>
+            <p>同一份数据既是给人看的网页，也是给程序读的 JSON —— <code>/api/snapshot</code> 一次拿到波形和测量值，网页和 AI 看到的是同一个数。</p>
+        </section>
+
+        <section>
+            <h2>三个入口，一套引擎</h2>
+            <ul>
+                <li><strong>网页控制台</strong> —— 实时波形、光标、触发、一键记录</li>
+                <li><strong>命令行</strong> —— 全量只读诊断、频谱包络、改设置并记录原值</li>
+                <li><strong>MCP server</strong> —— 给 AI 直接调仪器，默认只读，写权限要显式打开</li>
+            </ul>
+            <p>三个入口共用 <code>scope/</code> 一套采集库，拿到的数是同一个，不会各算各的。</p>
+        </section>
+
+        <section>
+            <h2>安全约定</h2>
+            <p>所有 SCPI 收发都过 <code>scope/scpi.py</code> 的命令闸门：只发官方手册核对过的命令，命令集里查不到就不发；复位、模拟按键、校准、固件升级一律拒绝；改设置的命令必须在白名单里，改之前先读原值。</p>
+            <p>链路只走 VXI-11。裸 socket 5555 单会话、无容错，发错一条查询命令就可能永久卡死，只能断电恢复。</p>
+            <p>记录是只读动作：在面板上按 STOP 冻结后网页才允许记录，记完按 RUN。网页不会替你按任何键。</p>
+        </section>
+
+        <section>
+            <h2>记录落在哪</h2>
+            <p>默认落在项目内的 <code>records/</code>，按日期分文件夹。现场用时在 <code>config.ini</code> 里把 <code>record_root</code> 指到自己的工作记录目录即可。</p>
+            <p>DEMO 模式落盘的文件带 <code>demo-</code> 前缀，跟真机数据分得开。</p>
+        </section>
+
+        <section>
+            <h2>界面</h2>
+            <p>白底、紫色光晕、半透明玻璃卡；字体是 HarmonyOS Sans，可免费嵌入分发。</p>
+        </section>
+
+        <section>
+            <h2>免责</h2>
+            <p>远程命令不会损坏仪器的软件或固件。最坏的情况是网络会话卡住，断电重启即恢复；真正能损坏仪器的是人接探头（过压、地夹接错位置），不是远程命令。</p>
+            <p>采集到的数据供现场判断参考，不构成任何形式的保证。</p>
+        </section>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+__pycache__/
+*.py[cod]
+*.log
+
+# 运行产物
+logs/
+records/
+
+# 离线工具的产出报告（tools/ 跑出来的 md/json）
+reports/
+
+# 手册原文与外部参考资料：不随仓库发布，用 SCOPE_MANUAL_DIR 指向外部目录
+data/manual/
+
+# 机器相关配置（仪器 IP、记录路径），只留 config.example.ini
+config.ini
+
+# 本机私有启动脚本：绑死本机 / 公司机的 Python 与浏览器路径，别人用不上
+启动网页控制台.bat
+
+# 虚拟环境
+.venv/
+venv/
+
+# 私有文档（个人笔记 / 实测记录 / 内部约定），不随开源仓库发布
+docs/*
+!docs/上手指南/
+docs/上手指南/*
+!docs/上手指南/DS2000E网络设置-面板操作指南.md

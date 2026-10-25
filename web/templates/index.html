@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}示波器刷刷乐 — 波形{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <div class="stats-row wave-row">
+        <!-- 左卡：光标。只开放关闭 / 手动；四根线直接在图上拖 -->
+        <div class="stat-card cursor-card">
+            <div class="filter-row">
+                <span class="filter-label">光标</span>
+                <div class="dd" id="curModeDD">
+                    <button type="button" class="dd-trigger" id="curModeBtn"
+                            aria-haspopup="listbox">
+                        <span id="curModeTxt">读取中…</span>
+                        <svg class="dd-arrow" width="12" height="12" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2.5"
+                             stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 9l6 6 6-6"></path>
+                        </svg>
+                    </button>
+                    <div class="dd-menu" id="curModeMenu" hidden role="listbox"></div>
+                </div>
+            </div>
+            <div id="curRows" class="cur-rows"></div>
+            <div class="trig-note hint" id="curNote"></div>
+        </div>
+
+        <!-- 波形 -->
+        <div class="stat-card solo">
+            <div class="wave-bar">
+                <span class="hint" id="statusHint">运行中</span>
+                <span class="hint" id="timebaseTxt"></span>
+                <span class="hint" id="waveNote"></span>
+                <label class="chk-wrap">
+                    <input type="checkbox" id="autoRefresh" checked> 自动刷新
+                </label>
+            </div>
+            <canvas id="wave" class="wave"></canvas>
+        </div>
+
+        <!-- 触发：类型走首页「排序」同款下拉，下面按类型换参数行 -->
+        <div class="stat-card trig-card">
+            <div class="filter-row">
+                <span class="filter-label">触发</span>
+                <div class="dd" id="trigTypeDD">
+                    <button type="button" class="dd-trigger" id="trigTypeBtn"
+                            aria-haspopup="listbox">
+                        <span id="trigTypeTxt">读取中…</span>
+                        <svg class="dd-arrow" width="12" height="12" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2.5"
+                             stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 9l6 6 6-6"></path>
+                        </svg>
+                    </button>
+                    <div class="dd-menu" id="trigTypeMenu" hidden role="listbox"></div>
+                </div>
+            </div>
+            <div id="trigRows"></div>
+            <div class="trig-note hint" id="trigNote"></div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

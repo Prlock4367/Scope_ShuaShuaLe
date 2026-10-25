@@ -1,0 +1,13 @@
+# 网页控制台：看界面只要 Flask
+flask>=3.0
+
+# 连真机（VXI-11）
+pyvisa>=1.13
+pyvisa-py>=0.7
+
+# 波形统计 / 截图转 PNG
+numpy>=1.24
+pillow>=10.0
+
+# tools/extract_scpi.py 从官方编程手册重抽命令集时才需要
+pypdf>=4.0

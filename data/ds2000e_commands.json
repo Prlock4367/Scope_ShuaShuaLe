@@ -1,0 +1,4030 @@
+{
+ ":AUToscale": {
+  "count": 5,
+  "forms": [
+   ":AUToscale"
+  ]
+ },
+ ":CLEar": {
+  "count": 5,
+  "forms": [
+   ":CLEar"
+  ]
+ },
+ ":RUN": {
+  "count": 7,
+  "forms": [
+   ":RUN"
+  ]
+ },
+ ":STOP": {
+  "count": 8,
+  "forms": [
+   ":STOP"
+  ]
+ },
+ ":SINGle": {
+  "count": 4,
+  "forms": [
+   ":SINGle"
+  ]
+ },
+ ":TFORce": {
+  "count": 5,
+  "forms": [
+   ":TFORce"
+  ]
+ },
+ ":TLHAlf": {
+  "count": 4,
+  "forms": [
+   ":TLHAlf"
+  ]
+ },
+ "*CLS": {
+  "count": 4,
+  "forms": [
+   "*CLS"
+  ]
+ },
+ "*ESE": {
+  "count": 7,
+  "forms": [
+   "*ESE",
+   "*ESE?"
+  ]
+ },
+ "*ESR": {
+  "count": 4,
+  "forms": [
+   "*ESR?"
+  ]
+ },
+ "*IDN": {
+  "count": 10,
+  "forms": [
+   "*IDN?"
+  ]
+ },
+ "*OPC": {
+  "count": 5,
+  "forms": [
+   "*OPC",
+   "*OPC?"
+  ]
+ },
+ "*RST": {
+  "count": 5,
+  "forms": [
+   "*RST"
+  ]
+ },
+ "*SRE": {
+  "count": 7,
+  "forms": [
+   "*SRE",
+   "*SRE?"
+  ]
+ },
+ "*STB": {
+  "count": 5,
+  "forms": [
+   "*STB?"
+  ]
+ },
+ "*TST": {
+  "count": 6,
+  "forms": [
+   "*TST?"
+  ]
+ },
+ ":ACQuire": {
+  "count": 3,
+  "forms": [
+   ":ACQuire"
+  ]
+ },
+ ":ACQuire:AVERages": {
+  "count": 7,
+  "forms": [
+   ":ACQuire:AVERages"
+  ]
+ },
+ ":ACQuire:MDEPth": {
+  "count": 8,
+  "forms": [
+   ":ACQuire:MDEPth"
+  ]
+ },
+ ":ACQuire:SRATe": {
+  "count": 5,
+  "forms": [
+   ":ACQuire:SRATe"
+  ]
+ },
+ ":ACQuire:TYPE": {
+  "count": 8,
+  "forms": [
+   ":ACQuire:TYPE"
+  ]
+ },
+ ":ACQuire:AALias": {
+  "count": 5,
+  "forms": [
+   ":ACQuire:AALias"
+  ]
+ },
+ ":BUS": {
+  "count": 5,
+  "forms": [
+   ":BUS",
+   ":BUS<n>"
+  ]
+ },
+ ":BUS:MODE": {
+  "count": 5,
+  "forms": [
+   ":BUS<n>:MODE"
+  ]
+ },
+ ":BUS:DISPlay": {
+  "count": 11,
+  "forms": [
+   ":BUS<n>:DISPlay"
+  ]
+ },
+ ":BUS:FORMat": {
+  "count": 6,
+  "forms": [
+   ":BUS<n>:FORMat"
+  ]
+ },
+ ":BUS:EVENt": {
+  "count": 5,
+  "forms": [
+   ":BUS<n>:EVENt"
+  ]
+ },
+ ":BUS:EEXPort": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:EEXPort"
+  ]
+ },
+ ":BUS:DATA": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:DATA"
+  ]
+ },
+ ":BUS:PARallel": {
+  "count": 3,
+  "forms": [
+   ":BUS<n>:PARallel"
+  ]
+ },
+ ":BUS:RS": {
+  "count": 3,
+  "forms": [
+   ":BUS<n>:RS232"
+  ]
+ },
+ ":BUS:IIC": {
+  "count": 3,
+  "forms": [
+   ":BUS<n>:IIC"
+  ]
+ },
+ ":BUS:SPI": {
+  "count": 3,
+  "forms": [
+   ":BUS<n>:SPI"
+  ]
+ },
+ ":BUS:CAN": {
+  "count": 3,
+  "forms": [
+   ":BUS<n>:CAN"
+  ]
+ },
+ ":CALCulate": {
+  "count": 3,
+  "forms": [
+   ":CALCulate"
+  ]
+ },
+ ":CALCulate:MODE": {
+  "count": 5,
+  "forms": [
+   ":CALCulate:MODE"
+  ]
+ },
+ ":CALCulate:ADD": {
+  "count": 3,
+  "forms": [
+   ":CALCulate:ADD"
+  ]
+ },
+ ":CALCulate:SUB": {
+  "count": 3,
+  "forms": [
+   ":CALCulate:SUB"
+  ]
+ },
+ ":CALCulate:MULTiply": {
+  "count": 3,
+  "forms": [
+   ":CALCulate:MULTiply"
+  ]
+ },
+ ":CALCulate:DIVision": {
+  "count": 3,
+  "forms": [
+   ":CALCulate:DIVision"
+  ]
+ },
+ ":CALCulate:FFT": {
+  "count": 3,
+  "forms": [
+   ":CALCulate:FFT"
+  ]
+ },
+ ":CALCulate:LOGic": {
+  "count": 3,
+  "forms": [
+   ":CALCulate:LOGic"
+  ]
+ },
+ ":CALCulate:ADVanced": {
+  "count": 3,
+  "forms": [
+   ":CALCulate:ADVanced"
+  ]
+ },
+ ":CALibrate": {
+  "count": 3,
+  "forms": [
+   ":CALibrate"
+  ]
+ },
+ ":CALibrate:DATE": {
+  "count": 4,
+  "forms": [
+   ":CALibrate:DATE"
+  ]
+ },
+ ":CALibrate:STARt": {
+  "count": 4,
+  "forms": [
+   ":CALibrate:STARt"
+  ]
+ },
+ ":CALibrate:TIME": {
+  "count": 4,
+  "forms": [
+   ":CALibrate:TIME"
+  ]
+ },
+ ":CALibrate:QUIT": {
+  "count": 4,
+  "forms": [
+   ":CALibrate:QUIT"
+  ]
+ },
+ ":CHANnel": {
+  "count": 3,
+  "forms": [
+   ":CHANnel<n>"
+  ]
+ },
+ ":CHANnel:BWLimit": {
+  "count": 5,
+  "forms": [
+   ":CHANnel<n>:BWLimit"
+  ]
+ },
+ ":CHANnel:COUPling": {
+  "count": 5,
+  "forms": [
+   ":CHANnel<n>:COUPling"
+  ]
+ },
+ ":CHANnel:DISPlay": {
+  "count": 5,
+  "forms": [
+   ":CHANnel<n>:DISPlay"
+  ]
+ },
+ ":CHANnel:INVert": {
+  "count": 5,
+  "forms": [
+   ":CHANnel<n>:INVert"
+  ]
+ },
+ ":CHANnel:IMPedance": {
+  "count": 7,
+  "forms": [
+   ":CHANnel<n>:IMPedance"
+  ]
+ },
+ ":CHANnel:OFFSet": {
+  "count": 27,
+  "forms": [
+   ":CHANnel<n>:OFFSet"
+  ]
+ },
+ ":CHANnel:SCALe": {
+  "count": 34,
+  "forms": [
+   ":CHANnel<n>:SCALe"
+  ]
+ },
+ ":CHANnel:PROBe": {
+  "count": 7,
+  "forms": [
+   ":CHANnel<n>:PROBe"
+  ]
+ },
+ ":CHANnel:UNITs": {
+  "count": 26,
+  "forms": [
+   ":CHANnel<n>:UNITs"
+  ]
+ },
+ ":CHANnel:VERNier": {
+  "count": 5,
+  "forms": [
+   ":CHANnel<n>:VERNier"
+  ]
+ },
+ ":CHANnel:TCAL": {
+  "count": 5,
+  "forms": [
+   ":CHANnel<n>:TCAL"
+  ]
+ },
+ ":CURSor": {
+  "count": 3,
+  "forms": [
+   ":CURSor"
+  ]
+ },
+ ":CURSor:MODE": {
+  "count": 5,
+  "forms": [
+   ":CURSor:MODE"
+  ]
+ },
+ ":CURSor:MANual": {
+  "count": 3,
+  "forms": [
+   ":CURSor:MANual"
+  ]
+ },
+ ":CURSor:TRACk": {
+  "count": 3,
+  "forms": [
+   ":CURSor:TRACk"
+  ]
+ },
+ ":DISPlay": {
+  "count": 3,
+  "forms": [
+   ":DISPlay"
+  ]
+ },
+ ":DISPlay:CLEar": {
+  "count": 4,
+  "forms": [
+   ":DISPlay:CLEar"
+  ]
+ },
+ ":DISPlay:TYPE": {
+  "count": 5,
+  "forms": [
+   ":DISPlay:TYPE"
+  ]
+ },
+ ":DISPlay:GRADing:TIME": {
+  "count": 5,
+  "forms": [
+   ":DISPlay:GRADing:TIME"
+  ]
+ },
+ ":DISPlay:WBRightness": {
+  "count": 5,
+  "forms": [
+   ":DISPlay:WBRightness"
+  ]
+ },
+ ":DISPlay:GRID": {
+  "count": 5,
+  "forms": [
+   ":DISPlay:GRID"
+  ]
+ },
+ ":DISPlay:GBRightness": {
+  "count": 7,
+  "forms": [
+   ":DISPlay:GBRightness"
+  ]
+ },
+ ":DISPlay:MPERsistence": {
+  "count": 5,
+  "forms": [
+   ":DISPlay:MPERsistence"
+  ]
+ },
+ ":DISPlay:DATA": {
+  "count": 4,
+  "forms": [
+   ":DISPlay:DATA"
+  ]
+ },
+ ":FUNCtion": {
+  "count": 3,
+  "forms": [
+   ":FUNCtion"
+  ]
+ },
+ ":FUNCtion:WRMode": {
+  "count": 5,
+  "forms": [
+   ":FUNCtion:WRMode"
+  ]
+ },
+ ":FUNCtion:WRECord": {
+  "count": 3,
+  "forms": [
+   ":FUNCtion:WRECord"
+  ]
+ },
+ ":FUNCtion:WREPlay": {
+  "count": 3,
+  "forms": [
+   ":FUNCtion:WREPlay"
+  ]
+ },
+ ":FUNCtion:WANalyze": {
+  "count": 3,
+  "forms": [
+   ":FUNCtion:WANalyze"
+  ]
+ },
+ ":LAN": {
+  "count": 3,
+  "forms": [
+   ":LAN"
+  ]
+ },
+ ":LAN:DHCP": {
+  "count": 5,
+  "forms": [
+   ":LAN:DHCP"
+  ]
+ },
+ ":LAN:AUToip": {
+  "count": 7,
+  "forms": [
+   ":LAN:AUToip"
+  ]
+ },
+ ":LAN:GATeway": {
+  "count": 7,
+  "forms": [
+   ":LAN:GATeway"
+  ]
+ },
+ ":LAN:DNS": {
+  "count": 7,
+  "forms": [
+   ":LAN:DNS"
+  ]
+ },
+ ":LAN:MAC": {
+  "count": 4,
+  "forms": [
+   ":LAN:MAC"
+  ]
+ },
+ ":LAN:MANual": {
+  "count": 9,
+  "forms": [
+   ":LAN:MANual"
+  ]
+ },
+ ":LAN:INITiate": {
+  "count": 4,
+  "forms": [
+   ":LAN:INITiate"
+  ]
+ },
+ ":LAN:IPADdress": {
+  "count": 6,
+  "forms": [
+   ":LAN:IPADdress"
+  ]
+ },
+ ":LAN:SMASk": {
+  "count": 6,
+  "forms": [
+   ":LAN:SMASk"
+  ]
+ },
+ ":LAN:STATus": {
+  "count": 4,
+  "forms": [
+   ":LAN:STATus"
+  ]
+ },
+ ":LAN:VISA": {
+  "count": 4,
+  "forms": [
+   ":LAN:VISA"
+  ]
+ },
+ ":LAN:APPLy": {
+  "count": 4,
+  "forms": [
+   ":LAN:APPLy"
+  ]
+ },
+ ":MASK": {
+  "count": 3,
+  "forms": [
+   ":MASK"
+  ]
+ },
+ ":MASK:ENABle": {
+  "count": 10,
+  "forms": [
+   ":MASK:ENABle"
+  ]
+ },
+ ":MASK:SOURce": {
+  "count": 5,
+  "forms": [
+   ":MASK:SOURce"
+  ]
+ },
+ ":MASK:OPERate": {
+  "count": 6,
+  "forms": [
+   ":MASK:OPERate"
+  ]
+ },
+ ":MASK:MDISplay": {
+  "count": 5,
+  "forms": [
+   ":MASK:MDISplay"
+  ]
+ },
+ ":MASK:SOOutput": {
+  "count": 5,
+  "forms": [
+   ":MASK:SOOutput"
+  ]
+ },
+ ":MASK:OUTPut": {
+  "count": 5,
+  "forms": [
+   ":MASK:OUTPut"
+  ]
+ },
+ ":MASK:X": {
+  "count": 6,
+  "forms": [
+   ":MASK:X"
+  ]
+ },
+ ":MASK:Y": {
+  "count": 6,
+  "forms": [
+   ":MASK:Y"
+  ]
+ },
+ ":MASK:CREate": {
+  "count": 4,
+  "forms": [
+   ":MASK:CREate"
+  ]
+ },
+ ":MASK:PASSed": {
+  "count": 5,
+  "forms": [
+   ":MASK:PASSed"
+  ]
+ },
+ ":MASK:FAILed": {
+  "count": 5,
+  "forms": [
+   ":MASK:FAILed"
+  ]
+ },
+ ":MASK:TOTal": {
+  "count": 5,
+  "forms": [
+   ":MASK:TOTal"
+  ]
+ },
+ ":MASK:RESet": {
+  "count": 4,
+  "forms": [
+   ":MASK:RESet"
+  ]
+ },
+ ":MASK:DATA": {
+  "count": 5,
+  "forms": [
+   ":MASK:DATA"
+  ]
+ },
+ ":MEASure": {
+  "count": 3,
+  "forms": [
+   ":MEASure"
+  ]
+ },
+ ":MEASure:SOURce": {
+  "count": 5,
+  "forms": [
+   ":MEASure:SOURce"
+  ]
+ },
+ ":MEASure:COUNter:SOURce": {
+  "count": 6,
+  "forms": [
+   ":MEASure:COUNter:SOURce"
+  ]
+ },
+ ":MEASure:COUNter:VALue": {
+  "count": 4,
+  "forms": [
+   ":MEASure:COUNter:VALue"
+  ]
+ },
+ ":MEASure:CLEar": {
+  "count": 5,
+  "forms": [
+   ":MEASure:CLEar"
+  ]
+ },
+ ":MEASure:RECover": {
+  "count": 5,
+  "forms": [
+   ":MEASure:RECover"
+  ]
+ },
+ ":MEASure:ADISplay": {
+  "count": 7,
+  "forms": [
+   ":MEASure:ADISplay"
+  ]
+ },
+ ":MEASure:AMSource": {
+  "count": 5,
+  "forms": [
+   ":MEASure:AMSource"
+  ]
+ },
+ ":MEASure:STATistic:DISPlay": {
+  "count": 16,
+  "forms": [
+   ":MEASure:STATistic:DISPlay"
+  ]
+ },
+ ":MEASure:STATistic:MODE": {
+  "count": 5,
+  "forms": [
+   ":MEASure:STATistic:MODE"
+  ]
+ },
+ ":MEASure:STATistic:RESet": {
+  "count": 4,
+  "forms": [
+   ":MEASure:STATistic:RESet"
+  ]
+ },
+ ":MEASure:SETup:TYPE": {
+  "count": 6,
+  "forms": [
+   ":MEASure:SETup:TYPE"
+  ]
+ },
+ ":MEASure:SETup:MAX": {
+  "count": 5,
+  "forms": [
+   ":MEASure:SETup:MAX"
+  ]
+ },
+ ":MEASure:SETup:MID": {
+  "count": 5,
+  "forms": [
+   ":MEASure:SETup:MID"
+  ]
+ },
+ ":MEASure:SETup:MIN": {
+  "count": 5,
+  "forms": [
+   ":MEASure:SETup:MIN"
+  ]
+ },
+ ":MEASure:SETup:PSA": {
+  "count": 6,
+  "forms": [
+   ":MEASure:SETup:PSA"
+  ]
+ },
+ ":MEASure:SETup:PSB": {
+  "count": 6,
+  "forms": [
+   ":MEASure:SETup:PSB"
+  ]
+ },
+ ":MEASure:SETup:DSA": {
+  "count": 6,
+  "forms": [
+   ":MEASure:SETup:DSA"
+  ]
+ },
+ ":MEASure:SETup:DSB": {
+  "count": 6,
+  "forms": [
+   ":MEASure:SETup:DSB"
+  ]
+ },
+ ":MEASure:AREA": {
+  "count": 6,
+  "forms": [
+   ":MEASure:AREA"
+  ]
+ },
+ ":MEASure:CREGion:CAX": {
+  "count": 6,
+  "forms": [
+   ":MEASure:CREGion:CAX"
+  ]
+ },
+ ":MEASure:CREGion:CBX": {
+  "count": 6,
+  "forms": [
+   ":MEASure:CREGion:CBX"
+  ]
+ },
+ ":MEASure:HISTory:DISPlay": {
+  "count": 5,
+  "forms": [
+   ":MEASure:HISTory:DISPlay"
+  ]
+ },
+ ":MEASure:HISTory:DMODe": {
+  "count": 5,
+  "forms": [
+   ":MEASure:HISTory:DMODe"
+  ]
+ },
+ ":MEASure:FDELay": {
+  "count": 8,
+  "forms": [
+   ":MEASure:FDELay"
+  ]
+ },
+ ":MEASure:FRDelay": {
+  "count": 8,
+  "forms": [
+   ":MEASure:F2RDelay"
+  ]
+ },
+ ":MEASure:FPHase": {
+  "count": 8,
+  "forms": [
+   ":MEASure:FPHase"
+  ]
+ },
+ ":MEASure:FRPhase": {
+  "count": 8,
+  "forms": [
+   ":MEASure:F2RPhase"
+  ]
+ },
+ ":MEASure:FREQuency": {
+  "count": 7,
+  "forms": [
+   ":MEASure:FREQuency"
+  ]
+ },
+ ":MEASure:FTIMe": {
+  "count": 7,
+  "forms": [
+   ":MEASure:FTIMe"
+  ]
+ },
+ ":MEASure:NDUTy": {
+  "count": 7,
+  "forms": [
+   ":MEASure:NDUTy"
+  ]
+ },
+ ":MEASure:NWIDth": {
+  "count": 7,
+  "forms": [
+   ":MEASure:NWIDth"
+  ]
+ },
+ ":MEASure:OVERshoot": {
+  "count": 7,
+  "forms": [
+   ":MEASure:OVERshoot"
+  ]
+ },
+ ":MEASure:PDUTy": {
+  "count": 7,
+  "forms": [
+   ":MEASure:PDUTy"
+  ]
+ },
+ ":MEASure:PERiod": {
+  "count": 7,
+  "forms": [
+   ":MEASure:PERiod"
+  ]
+ },
+ ":MEASure:PREShoot": {
+  "count": 7,
+  "forms": [
+   ":MEASure:PREShoot"
+  ]
+ },
+ ":MEASure:PWIDth": {
+  "count": 7,
+  "forms": [
+   ":MEASure:PWIDth"
+  ]
+ },
+ ":MEASure:RTIMe": {
+  "count": 7,
+  "forms": [
+   ":MEASure:RTIMe"
+  ]
+ },
+ ":MEASure:RDELay": {
+  "count": 8,
+  "forms": [
+   ":MEASure:RDELay"
+  ]
+ },
+ ":MEASure:RFDelay": {
+  "count": 8,
+  "forms": [
+   ":MEASure:R2FDelay"
+  ]
+ },
+ ":MEASure:RPHase": {
+  "count": 8,
+  "forms": [
+   ":MEASure:RPHase"
+  ]
+ },
+ ":MEASure:RFPhase": {
+  "count": 8,
+  "forms": [
+   ":MEASure:R2FPhase"
+  ]
+ },
+ ":MEASure:VAMP": {
+  "count": 7,
+  "forms": [
+   ":MEASure:VAMP"
+  ]
+ },
+ ":MEASure:VAVG": {
+  "count": 7,
+  "forms": [
+   ":MEASure:VAVG"
+  ]
+ },
+ ":MEASure:VBASe": {
+  "count": 7,
+  "forms": [
+   ":MEASure:VBASe"
+  ]
+ },
+ ":MEASure:VMAX": {
+  "count": 7,
+  "forms": [
+   ":MEASure:VMAX"
+  ]
+ },
+ ":MEASure:VMIN": {
+  "count": 7,
+  "forms": [
+   ":MEASure:VMIN"
+  ]
+ },
+ ":MEASure:VPP": {
+  "count": 7,
+  "forms": [
+   ":MEASure:VPP"
+  ]
+ },
+ ":MEASure:VRMS": {
+  "count": 7,
+  "forms": [
+   ":MEASure:VRMS"
+  ]
+ },
+ ":MEASure:PVRMs": {
+  "count": 7,
+  "forms": [
+   ":MEASure:PVRMs"
+  ]
+ },
+ ":MEASure:VTOP": {
+  "count": 7,
+  "forms": [
+   ":MEASure:VTOP"
+  ]
+ },
+ ":MEASure:MARea": {
+  "count": 7,
+  "forms": [
+   ":MEASure:MARea"
+  ]
+ },
+ ":MEASure:MPARea": {
+  "count": 7,
+  "forms": [
+   ":MEASure:MPARea"
+  ]
+ },
+ ":RECall": {
+  "count": 3,
+  "forms": [
+   ":RECall"
+  ]
+ },
+ ":RECall:SETup": {
+  "count": 5,
+  "forms": [
+   ":RECall:SETup"
+  ]
+ },
+ ":RECall:TRACe": {
+  "count": 5,
+  "forms": [
+   ":RECall:TRACe"
+  ]
+ },
+ ":RECall:WAVeform": {
+  "count": 5,
+  "forms": [
+   ":RECall:WAVeform"
+  ]
+ },
+ ":REFerence": {
+  "count": 3,
+  "forms": [
+   ":REFerence"
+  ]
+ },
+ ":REFerence:CURRent": {
+  "count": 9,
+  "forms": [
+   ":REFerence:CURRent",
+   ":REFerence<n>:CURRent"
+  ]
+ },
+ ":REFerence:ENABle": {
+  "count": 6,
+  "forms": [
+   ":REFerence<n>:ENABle"
+  ]
+ },
+ ":REFerence:COLor": {
+  "count": 5,
+  "forms": [
+   ":REFerence:COLor"
+  ]
+ },
+ ":REFerence:DISPlay": {
+  "count": 5,
+  "forms": [
+   ":REFerence:DISPlay"
+  ]
+ },
+ ":REFerence:RESet": {
+  "count": 4,
+  "forms": [
+   ":REFerence:RESet"
+  ]
+ },
+ ":REFerence:SAVe": {
+  "count": 6,
+  "forms": [
+   ":REFerence:SAVe"
+  ]
+ },
+ ":REFerence:SOURce": {
+  "count": 5,
+  "forms": [
+   ":REFerence:SOURce"
+  ]
+ },
+ ":REFerence:VSCale": {
+  "count": 5,
+  "forms": [
+   ":REFerence:VSCale"
+  ]
+ },
+ ":REFerence:VOFFset": {
+  "count": 5,
+  "forms": [
+   ":REFerence:VOFFset"
+  ]
+ },
+ ":SAVE": {
+  "count": 3,
+  "forms": [
+   ":SAVE"
+  ]
+ },
+ ":SAVE:CSV:STARt": {
+  "count": 5,
+  "forms": [
+   ":SAVE:CSV[:STARt]"
+  ]
+ },
+ ":SAVE:CSV:FACTors": {
+  "count": 5,
+  "forms": [
+   ":SAVE:CSV:FACTors"
+  ]
+ },
+ ":SAVE:CSV:LENGth": {
+  "count": 5,
+  "forms": [
+   ":SAVE:CSV:LENGth"
+  ]
+ },
+ ":SAVE:FORMat": {
+  "count": 5,
+  "forms": [
+   ":SAVE:FORMat"
+  ]
+ },
+ ":SAVE:IMAGe:STARt": {
+  "count": 5,
+  "forms": [
+   ":SAVE:IMAGe[:STARt]"
+  ]
+ },
+ ":SAVE:IMAGe:TYPE": {
+  "count": 5,
+  "forms": [
+   ":SAVE:IMAGe:TYPE"
+  ]
+ },
+ ":SAVE:IMAGe:FACTors": {
+  "count": 5,
+  "forms": [
+   ":SAVE:IMAGe:FACTors"
+  ]
+ },
+ ":SAVE:SETup:STARt": {
+  "count": 5,
+  "forms": [
+   ":SAVE:SETup[:STARt]"
+  ]
+ },
+ ":SAVE:TRACe:STARt": {
+  "count": 5,
+  "forms": [
+   ":SAVE:TRACe[:STARt]"
+  ]
+ },
+ ":SAVE:WAVeform:STARt": {
+  "count": 5,
+  "forms": [
+   ":SAVE:WAVeform[:STARt]"
+  ]
+ },
+ ":SAVE:REFerence:STARt": {
+  "count": 4,
+  "forms": [
+   ":SAVE:REFerence[:STARt]"
+  ]
+ },
+ ":SAVE:MTESt:STARt": {
+  "count": 4,
+  "forms": [
+   ":SAVE:MTESt[:STARt]"
+  ]
+ },
+ ":SYSTem": {
+  "count": 3,
+  "forms": [
+   ":SYSTem"
+  ]
+ },
+ ":SYSTem:AOUTput": {
+  "count": 5,
+  "forms": [
+   ":SYSTem:AOUTput"
+  ]
+ },
+ ":SYSTem:AUToscale": {
+  "count": 6,
+  "forms": [
+   ":SYSTem:AUToscale"
+  ]
+ },
+ ":SYSTem:BEEPer": {
+  "count": 5,
+  "forms": [
+   ":SYSTem:BEEPer"
+  ]
+ },
+ ":SYSTem:DATE": {
+  "count": 6,
+  "forms": [
+   ":SYSTem:DATE"
+  ]
+ },
+ ":SYSTem:ERRor:NEXT": {
+  "count": 4,
+  "forms": [
+   ":SYSTem:ERRor[:NEXT]"
+  ]
+ },
+ ":SYSTem:EXPand": {
+  "count": 5,
+  "forms": [
+   ":SYSTem:EXPand"
+  ]
+ },
+ ":SYSTem:GAMount": {
+  "count": 4,
+  "forms": [
+   ":SYSTem:GAMount"
+  ]
+ },
+ ":SYSTem:GPIB": {
+  "count": 5,
+  "forms": [
+   ":SYSTem:GPIB"
+  ]
+ },
+ ":SYSTem:KEY:PRESs": {
+  "count": 4,
+  "forms": [
+   ":SYSTem:KEY:PRESs"
+  ]
+ },
+ ":SYSTem:KEY:INCRease": {
+  "count": 4,
+  "forms": [
+   ":SYSTem:KEY:INCRease"
+  ]
+ },
+ ":SYSTem:KEY:DECRease": {
+  "count": 4,
+  "forms": [
+   ":SYSTem:KEY:DECRease"
+  ]
+ },
+ ":SYSTem:LANGuage": {
+  "count": 5,
+  "forms": [
+   ":SYSTem:LANGuage"
+  ]
+ },
+ ":SYSTem:OPTion:INSTall": {
+  "count": 5,
+  "forms": [
+   ":SYSTem:OPTion:INSTall"
+  ]
+ },
+ ":SYSTem:OPTion:UNINSTall": {
+  "count": 4,
+  "forms": [
+   ":SYSTem:OPTion:UNINSTall"
+  ]
+ },
+ ":SYSTem:OPTion:VALid": {
+  "count": 4,
+  "forms": [
+   ":SYSTem:OPTion:VALid"
+  ]
+ },
+ ":SYSTem:PON": {
+  "count": 5,
+  "forms": [
+   ":SYSTem:PON"
+  ]
+ },
+ ":SYSTem:PSTatus": {
+  "count": 5,
+  "forms": [
+   ":SYSTem:PSTatus"
+  ]
+ },
+ ":SYSTem:RAMount": {
+  "count": 4,
+  "forms": [
+   ":SYSTem:RAMount"
+  ]
+ },
+ ":SYSTem:RESet": {
+  "count": 4,
+  "forms": [
+   ":SYSTem:RESet"
+  ]
+ },
+ ":SYSTem:SSAVer:TIME": {
+  "count": 5,
+  "forms": [
+   ":SYSTem:SSAVer:TIME"
+  ]
+ },
+ ":SYSTem:SETup": {
+  "count": 5,
+  "forms": [
+   ":SYSTem:SETup"
+  ]
+ },
+ ":SYSTem:TIME": {
+  "count": 5,
+  "forms": [
+   ":SYSTem:TIME"
+  ]
+ },
+ ":SYSTem:UDEVice": {
+  "count": 5,
+  "forms": [
+   ":SYSTem:UDEVice"
+  ]
+ },
+ ":SYSTem:VERSion": {
+  "count": 4,
+  "forms": [
+   ":SYSTem:VERSion"
+  ]
+ },
+ ":TIMebase": {
+  "count": 3,
+  "forms": [
+   ":TIMebase"
+  ]
+ },
+ ":TIMebase:DELay:ENABle": {
+  "count": 10,
+  "forms": [
+   ":TIMebase:DELay:ENABle"
+  ]
+ },
+ ":TIMebase:DELay:OFFSet": {
+  "count": 5,
+  "forms": [
+   ":TIMebase:DELay:OFFSet"
+  ]
+ },
+ ":TIMebase:DELay:SCALe": {
+  "count": 6,
+  "forms": [
+   ":TIMebase:DELay:SCALe"
+  ]
+ },
+ ":TIMebase:MAIN:OFFSet": {
+  "count": 6,
+  "forms": [
+   ":TIMebase[:MAIN]:OFFSet"
+  ]
+ },
+ ":TIMebase:MAIN:SCALe": {
+  "count": 11,
+  "forms": [
+   ":TIMebase[:MAIN]:SCALe"
+  ]
+ },
+ ":TIMebase:HREF:MODE": {
+  "count": 5,
+  "forms": [
+   ":TIMebase:HREF:MODE"
+  ]
+ },
+ ":TIMebase:HREF:POSition": {
+  "count": 6,
+  "forms": [
+   ":TIMebase:HREF:POSition"
+  ]
+ },
+ ":TIMebase:MODE": {
+  "count": 8,
+  "forms": [
+   ":TIMebase:MODE"
+  ]
+ },
+ ":TIMebase:VERNier": {
+  "count": 5,
+  "forms": [
+   ":TIMebase:VERNier"
+  ]
+ },
+ ":TRIGger": {
+  "count": 6,
+  "forms": [
+   ":TRIGger",
+   ":TRIGger:"
+  ]
+ },
+ ":TRIGger:COUPling": {
+  "count": 5,
+  "forms": [
+   ":TRIGger:COUPling"
+  ]
+ },
+ ":TRIGger:HOLDoff": {
+  "count": 5,
+  "forms": [
+   ":TRIGger:HOLDoff"
+  ]
+ },
+ ":TRIGger:MODE": {
+  "count": 5,
+  "forms": [
+   ":TRIGger:MODE"
+  ]
+ },
+ ":TRIGger:NREJect": {
+  "count": 5,
+  "forms": [
+   ":TRIGger:NREJect"
+  ]
+ },
+ ":TRIGger:STATus": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:STATus"
+  ]
+ },
+ ":TRIGger:SWEep": {
+  "count": 5,
+  "forms": [
+   ":TRIGger:SWEep"
+  ]
+ },
+ ":TRIGger:CAN": {
+  "count": 3,
+  "forms": [
+   ":TRIGger:CAN"
+  ]
+ },
+ ":TRIGger:DELay": {
+  "count": 3,
+  "forms": [
+   ":TRIGger:DELay"
+  ]
+ },
+ ":TRIGger:DURATion": {
+  "count": 3,
+  "forms": [
+   ":TRIGger:DURATion"
+  ]
+ },
+ ":TRIGger:EDGe": {
+  "count": 3,
+  "forms": [
+   ":TRIGger:EDGe"
+  ]
+ },
+ ":TRIGger:IIC": {
+  "count": 3,
+  "forms": [
+   ":TRIGger:IIC"
+  ]
+ },
+ ":TRIGger:NEDGe": {
+  "count": 3,
+  "forms": [
+   ":TRIGger:NEDGe"
+  ]
+ },
+ ":TRIGger:PATTern": {
+  "count": 3,
+  "forms": [
+   ":TRIGger:PATTern"
+  ]
+ },
+ ":TRIGger:PULSe": {
+  "count": 3,
+  "forms": [
+   ":TRIGger:PULSe"
+  ]
+ },
+ ":TRIGger:RS": {
+  "count": 3,
+  "forms": [
+   ":TRIGger:RS232"
+  ]
+ },
+ ":TRIGger:RUNT": {
+  "count": 3,
+  "forms": [
+   ":TRIGger:RUNT"
+  ]
+ },
+ ":TRIGger:SHOLd": {
+  "count": 3,
+  "forms": [
+   ":TRIGger:SHOLd"
+  ]
+ },
+ ":TRIGger:SLOPe": {
+  "count": 3,
+  "forms": [
+   ":TRIGger:SLOPe"
+  ]
+ },
+ ":TRIGger:SPI": {
+  "count": 3,
+  "forms": [
+   ":TRIGger:SPI"
+  ]
+ },
+ ":TRIGger:TIMeout": {
+  "count": 3,
+  "forms": [
+   ":TRIGger:TIMeout"
+  ]
+ },
+ ":TRIGger:USB": {
+  "count": 3,
+  "forms": [
+   ":TRIGger:USB"
+  ]
+ },
+ ":TRIGger:VIDeo": {
+  "count": 3,
+  "forms": [
+   ":TRIGger:VIDeo"
+  ]
+ },
+ ":TRIGger:WINDows": {
+  "count": 3,
+  "forms": [
+   ":TRIGger:WINDows"
+  ]
+ },
+ ":WAVeform": {
+  "count": 4,
+  "forms": [
+   ":WAVeform"
+  ]
+ },
+ ":WAVeform:SOURce": {
+  "count": 12,
+  "forms": [
+   ":WAVeform:SOURce"
+  ]
+ },
+ ":WAVeform:MODE": {
+  "count": 10,
+  "forms": [
+   ":WAVeform:MODE"
+  ]
+ },
+ ":WAVeform:FORMat": {
+  "count": 7,
+  "forms": [
+   ":WAVeform:FORMat"
+  ]
+ },
+ ":WAVeform:POINts": {
+  "count": 6,
+  "forms": [
+   ":WAVeform:POINts"
+  ]
+ },
+ ":WAVeform:DATA": {
+  "count": 6,
+  "forms": [
+   ":WAVeform:DATA"
+  ]
+ },
+ ":WAVeform:XINCrement": {
+  "count": 5,
+  "forms": [
+   ":WAVeform:XINCrement"
+  ]
+ },
+ ":WAVeform:XORigin": {
+  "count": 5,
+  "forms": [
+   ":WAVeform:XORigin"
+  ]
+ },
+ ":WAVeform:XREFerence": {
+  "count": 5,
+  "forms": [
+   ":WAVeform:XREFerence"
+  ]
+ },
+ ":WAVeform:YINCrement": {
+  "count": 6,
+  "forms": [
+   ":WAVeform:YINCrement"
+  ]
+ },
+ ":WAVeform:YORigin": {
+  "count": 6,
+  "forms": [
+   ":WAVeform:YORigin"
+  ]
+ },
+ ":WAVeform:YREFerence": {
+  "count": 7,
+  "forms": [
+   ":WAVeform:YREFerence"
+  ]
+ },
+ ":WAVeform:STARt": {
+  "count": 6,
+  "forms": [
+   ":WAVeform:STARt"
+  ]
+ },
+ ":WAVeform:STOP": {
+  "count": 6,
+  "forms": [
+   ":WAVeform:STOP"
+  ]
+ },
+ ":WAVeform:PREamble": {
+  "count": 5,
+  "forms": [
+   ":WAVeform:PREamble"
+  ]
+ },
+ ":CALCulate:ADVanced:EXPRession": {
+  "count": 11,
+  "forms": [
+   ":CALCulate:ADVanced:EXPRession"
+  ]
+ },
+ ":FUNCtion:WREPlay:INTerval": {
+  "count": 6,
+  "forms": [
+   ":FUNCtion:WREPlay:INTerval"
+  ]
+ },
+ ":CALCulate:ADVanced:VARiable": {
+  "count": 9,
+  "forms": [
+   ":CALCulate:ADVanced:VARiable1",
+   ":CALCulate:ADVanced:VARiable2"
+  ]
+ },
+ ":CALC:ADV:VAR": {
+  "count": 1,
+  "forms": [
+   ":CALC:ADV:VAR1"
+  ]
+ },
+ ":BUS:PARallel:CLK": {
+  "count": 5,
+  "forms": [
+   ":BUS<n>:PARallel:CLK"
+  ]
+ },
+ ":BUS:PARallel:SLOPe": {
+  "count": 5,
+  "forms": [
+   ":BUS<n>:PARallel:SLOPe"
+  ]
+ },
+ ":BUS:PARallel:BSET": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:PARallel:BSET"
+  ]
+ },
+ ":BUS:PARallel:THReshold": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:PARallel:THReshold"
+  ]
+ },
+ ":BUS:PARallel:OFFSet": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:PARallel:OFFSet"
+  ]
+ },
+ ":CALCulate:FFT:SPLit": {
+  "count": 9,
+  "forms": [
+   ":CALCulate:FFT:SPLit"
+  ]
+ },
+ ":BUS:RS:TX": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:RS232:TX"
+  ]
+ },
+ ":BUS:RS:RX": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:RS232:RX"
+  ]
+ },
+ ":BUS:RS:POLarity": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:RS232:POLarity"
+  ]
+ },
+ ":BUS:RS:ENDian": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:RS232:ENDian"
+  ]
+ },
+ ":BUS:RS:BAUD": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:RS232:BAUD"
+  ]
+ },
+ ":BUS:RS:BUSer": {
+  "count": 5,
+  "forms": [
+   ":BUS<n>:RS232:BUSer"
+  ]
+ },
+ ":BUS:RS:DBITs": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:RS232:DBITs"
+  ]
+ },
+ ":BUS:RS:SBITs": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:RS232:SBITs"
+  ]
+ },
+ ":BUS:RS:PARity": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:RS232:PARity"
+  ]
+ },
+ ":BUS:RS:PACKet": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:RS232:PACKet"
+  ]
+ },
+ ":BUS:RS:PEND": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:RS232:PEND"
+  ]
+ },
+ ":BUS:RS:TTHReshold": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:RS232:TTHReshold"
+  ]
+ },
+ ":BUS:RS:RTHReshold": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:RS232:RTHReshold"
+  ]
+ },
+ ":BUS:RS:OFFSet": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:RS232:OFFSet"
+  ]
+ },
+ ":BUS:IIC:SCLK:SOURce": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:IIC:SCLK:SOURce"
+  ]
+ },
+ ":BUS:IIC:SCLK:THReshold": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:IIC:SCLK:THReshold"
+  ]
+ },
+ ":BUS:IIC:SDA:SOURce": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:IIC:SDA:SOURce"
+  ]
+ },
+ ":BUS:IIC:SDA:THReshold": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:IIC:SDA:THReshold"
+  ]
+ },
+ ":BUS:IIC:OFFSet": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:IIC:OFFSet"
+  ]
+ },
+ ":BUS:SPI:SCLK:SOURce": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:SPI:SCLK:SOURce"
+  ]
+ },
+ ":BUS:SPI:SCLK:SLOPe": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:SPI:SCLK:SLOPe"
+  ]
+ },
+ ":BUS:SPI:SCLK:THReshold": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:SPI:SCLK:THReshold"
+  ]
+ },
+ ":BUS:SPI:SDA:SOURce": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:SPI:SDA:SOURce"
+  ]
+ },
+ ":BUS:SPI:SDA:POLarity": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:SPI:SDA:POLarity"
+  ]
+ },
+ ":BUS:SPI:SDA:THReshold": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:SPI:SDA:THReshold"
+  ]
+ },
+ ":BUS:SPI:DBITs": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:SPI:DBITs"
+  ]
+ },
+ ":BUS:SPI:ENDian": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:SPI:ENDian"
+  ]
+ },
+ ":BUS:SPI:OFFSet": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:SPI:OFFSet"
+  ]
+ },
+ ":BUS:SPI:TIMeout:TIME": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:SPI:TIMeout:TIME"
+  ]
+ },
+ ":BUS:CAN:SOURce": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:CAN:SOURce"
+  ]
+ },
+ ":BUS:CAN:STYPe": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:CAN:STYPe"
+  ]
+ },
+ ":BUS:CAN:BAUD": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:CAN:BAUD"
+  ]
+ },
+ ":BUS:CAN:BUSer": {
+  "count": 5,
+  "forms": [
+   ":BUS<n>:CAN:BUSer"
+  ]
+ },
+ ":BUS:CAN:SPOint": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:CAN:SPOint"
+  ]
+ },
+ ":BUS:CAN:THReshold": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:CAN:THReshold"
+  ]
+ },
+ ":BUS:CAN:OFFSet": {
+  "count": 4,
+  "forms": [
+   ":BUS<n>:CAN:OFFSet"
+  ]
+ },
+ ":CALCulate:ADD:SA": {
+  "count": 4,
+  "forms": [
+   ":CALCulate:ADD:SA"
+  ]
+ },
+ ":CALCulate:ADD:SB": {
+  "count": 4,
+  "forms": [
+   ":CALCulate:ADD:SB"
+  ]
+ },
+ ":CALCulate:ADD:INVert": {
+  "count": 4,
+  "forms": [
+   ":CALCulate:ADD:INVert"
+  ]
+ },
+ ":CALCulate:ADD:VSCale": {
+  "count": 5,
+  "forms": [
+   ":CALCulate:ADD:VSCale"
+  ]
+ },
+ ":CALCulate:ADD:VOFFset": {
+  "count": 4,
+  "forms": [
+   ":CALCulate:ADD:VOFFset"
+  ]
+ },
+ ":CALCulate:SUB:SA": {
+  "count": 4,
+  "forms": [
+   ":CALCulate:SUB:SA"
+  ]
+ },
+ ":CALCulate:SUB:SB": {
+  "count": 4,
+  "forms": [
+   ":CALCulate:SUB:SB"
+  ]
+ },
+ ":CALCulate:SUB:INVert": {
+  "count": 4,
+  "forms": [
+   ":CALCulate:SUB:INVert"
+  ]
+ },
+ ":CALCulate:SUB:VSCale": {
+  "count": 5,
+  "forms": [
+   ":CALCulate:SUB:VSCale"
+  ]
+ },
+ ":CALCulate:SUB:VOFFset": {
+  "count": 4,
+  "forms": [
+   ":CALCulate:SUB:VOFFset"
+  ]
+ },
+ ":CALCulate:MULTiply:SA": {
+  "count": 4,
+  "forms": [
+   ":CALCulate:MULTiply:SA"
+  ]
+ },
+ ":CALCulate:MULTiply:SB": {
+  "count": 4,
+  "forms": [
+   ":CALCulate:MULTiply:SB"
+  ]
+ },
+ ":CALCulate:MULTiply:INVert": {
+  "count": 4,
+  "forms": [
+   ":CALCulate:MULTiply:INVert"
+  ]
+ },
+ ":CALCulate:MULTiply:VSCale": {
+  "count": 5,
+  "forms": [
+   ":CALCulate:MULTiply:VSCale"
+  ]
+ },
+ ":CALCulate:MULTiply:VOFFset": {
+  "count": 4,
+  "forms": [
+   ":CALCulate:MULTiply:VOFFset"
+  ]
+ },
+ ":CALCulate:DIVision:SA": {
+  "count": 4,
+  "forms": [
+   ":CALCulate:DIVision:SA"
+  ]
+ },
+ ":CALCulate:DIVision:SB": {
+  "count": 4,
+  "forms": [
+   ":CALCulate:DIVision:SB"
+  ]
+ },
+ ":CALCulate:DIVision:INVert": {
+  "count": 4,
+  "forms": [
+   ":CALCulate:DIVision:INVert"
+  ]
+ },
+ ":CALCulate:DIVision:VSCale": {
+  "count": 5,
+  "forms": [
+   ":CALCulate:DIVision:VSCale"
+  ]
+ },
+ ":CALCulate:DIVision:VOFFset": {
+  "count": 4,
+  "forms": [
+   ":CALCulate:DIVision:VOFFset"
+  ]
+ },
+ ":CALCulate:FFT:SOURce": {
+  "count": 4,
+  "forms": [
+   ":CALCulate:FFT:SOURce"
+  ]
+ },
+ ":CALCulate:FFT:WINDow": {
+  "count": 4,
+  "forms": [
+   ":CALCulate:FFT:WINDow"
+  ]
+ },
+ ":CALCulate:FFT:VSMode": {
+  "count": 5,
+  "forms": [
+   ":CALCulate:FFT:VSMode"
+  ]
+ },
+ ":CALCulate:FFT:VSCale": {
+  "count": 5,
+  "forms": [
+   ":CALCulate:FFT:VSCale"
+  ]
+ },
+ ":CALCulate:FFT:VOFFset": {
+  "count": 4,
+  "forms": [
+   ":CALCulate:FFT:VOFFset"
+  ]
+ },
+ ":CALCulate:FFT:HSCale": {
+  "count": 6,
+  "forms": [
+   ":CALCulate:FFT:HSCale"
+  ]
+ },
+ ":CALCulate:FFT:HOFFset": {
+  "count": 5,
+  "forms": [
+   ":CALCulate:FFT:HOFFset"
+  ]
+ },
+ ":CALCulate:FFT:HSPan": {
+  "count": 7,
+  "forms": [
+   ":CALCulate:FFT:HSPan"
+  ]
+ },
+ ":CALCulate:FFT:HCENter": {
+  "count": 4,
+  "forms": [
+   ":CALCulate:FFT:HCENter"
+  ]
+ },
+ ":CALCulate:LOGic:SA": {
+  "count": 5,
+  "forms": [
+   ":CALCulate:LOGic:SA"
+  ]
+ },
+ ":CALCulate:LOGic:SB": {
+  "count": 4,
+  "forms": [
+   ":CALCulate:LOGic:SB"
+  ]
+ },
+ ":CALCulate:LOGic:INVert": {
+  "count": 4,
+  "forms": [
+   ":CALCulate:LOGic:INVert"
+  ]
+ },
+ ":CALCulate:LOGic:VSCale": {
+  "count": 5,
+  "forms": [
+   ":CALCulate:LOGic:VSCale"
+  ]
+ },
+ ":CALCulate:LOGic:VOFFset": {
+  "count": 4,
+  "forms": [
+   ":CALCulate:LOGic:VOFFset"
+  ]
+ },
+ ":CALCulate:LOGic:OPERator": {
+  "count": 4,
+  "forms": [
+   ":CALCulate:LOGic:OPERator"
+  ]
+ },
+ ":CALCulate:LOGic:ATHReshold": {
+  "count": 4,
+  "forms": [
+   ":CALCulate:LOGic:ATHReshold"
+  ]
+ },
+ ":CALCulate:LOGic:BTHReshold": {
+  "count": 4,
+  "forms": [
+   ":CALCulate:LOGic:BTHReshold"
+  ]
+ },
+ ":CALCulate:ADVanced:INVert": {
+  "count": 4,
+  "forms": [
+   ":CALCulate:ADVanced:INVert"
+  ]
+ },
+ ":CALCulate:ADVanced:VSCale": {
+  "count": 5,
+  "forms": [
+   ":CALCulate:ADVanced:VSCale"
+  ]
+ },
+ ":CALCulate:ADVanced:VOFFset": {
+  "count": 4,
+  "forms": [
+   ":CALCulate:ADVanced:VOFFset"
+  ]
+ },
+ ":CURSor:MANual:TYPE": {
+  "count": 4,
+  "forms": [
+   ":CURSor:MANual:TYPE"
+  ]
+ },
+ ":CURSor:MANual:SOURce": {
+  "count": 4,
+  "forms": [
+   ":CURSor:MANual:SOURce"
+  ]
+ },
+ ":CURSor:MANual:TUNit": {
+  "count": 8,
+  "forms": [
+   ":CURSor:MANual:TUNit"
+  ]
+ },
+ ":CURSor:MANual:VUNit": {
+  "count": 7,
+  "forms": [
+   ":CURSor:MANual:VUNit"
+  ]
+ },
+ ":CURSor:MANual:CAX": {
+  "count": 7,
+  "forms": [
+   ":CURSor:MANual:CAX"
+  ]
+ },
+ ":CURSor:MANual:CBX": {
+  "count": 7,
+  "forms": [
+   ":CURSor:MANual:CBX"
+  ]
+ },
+ ":CURSor:MANual:CAY": {
+  "count": 6,
+  "forms": [
+   ":CURSor:MANual:CAY"
+  ]
+ },
+ ":CURSor:MANual:CBY": {
+  "count": 6,
+  "forms": [
+   ":CURSor:MANual:CBY"
+  ]
+ },
+ ":CURSor:MANual:AXValue": {
+  "count": 3,
+  "forms": [
+   ":CURSor:MANual:AXValue"
+  ]
+ },
+ ":CURSor:MANual:BXValue": {
+  "count": 3,
+  "forms": [
+   ":CURSor:MANual:BXValue"
+  ]
+ },
+ ":CURSor:MANual:AYValue": {
+  "count": 3,
+  "forms": [
+   ":CURSor:MANual:AYValue"
+  ]
+ },
+ ":CURSor:MANual:BYValue": {
+  "count": 3,
+  "forms": [
+   ":CURSor:MANual:BYValue"
+  ]
+ },
+ ":CURSor:MANual:XDELta": {
+  "count": 3,
+  "forms": [
+   ":CURSor:MANual:XDELta"
+  ]
+ },
+ ":CURSor:MANual:IXDelta": {
+  "count": 3,
+  "forms": [
+   ":CURSor:MANual:IXDelta"
+  ]
+ },
+ ":CURSor:MANual:YDELta": {
+  "count": 3,
+  "forms": [
+   ":CURSor:MANual:YDELta"
+  ]
+ },
+ ":CURSor:TRACk:SOURce": {
+  "count": 10,
+  "forms": [
+   ":CURSor:TRACk:SOURce1",
+   ":CURSor:TRACk:SOURce2"
+  ]
+ },
+ ":CURSor:TRACk:CAX": {
+  "count": 7,
+  "forms": [
+   ":CURSor:TRACk:CAX"
+  ]
+ },
+ ":CURSor:TRACk:CBX": {
+  "count": 7,
+  "forms": [
+   ":CURSor:TRACk:CBX"
+  ]
+ },
+ ":CURSor:TRACk:CAY": {
+  "count": 5,
+  "forms": [
+   ":CURSor:TRACk:CAY"
+  ]
+ },
+ ":CURSor:TRACk:CBY": {
+  "count": 5,
+  "forms": [
+   ":CURSor:TRACk:CBY"
+  ]
+ },
+ ":CURSor:TRACk:AXValue": {
+  "count": 3,
+  "forms": [
+   ":CURSor:TRACk:AXValue"
+  ]
+ },
+ ":CURSor:TRACk:AYValue": {
+  "count": 4,
+  "forms": [
+   ":CURSor:TRACk:AYValue"
+  ]
+ },
+ ":CURSor:TRACk:BXValue": {
+  "count": 3,
+  "forms": [
+   ":CURSor:TRACk:BXValue"
+  ]
+ },
+ ":CURSor:TRACk:BYValue": {
+  "count": 4,
+  "forms": [
+   ":CURSor:TRACk:BYValue"
+  ]
+ },
+ ":CURSor:TRACk:XDELta": {
+  "count": 3,
+  "forms": [
+   ":CURSor:TRACk:XDELta"
+  ]
+ },
+ ":CURSor:TRACk:YDELta": {
+  "count": 3,
+  "forms": [
+   ":CURSor:TRACk:YDELta"
+  ]
+ },
+ ":CURSor:TRACk:IXDelta": {
+  "count": 3,
+  "forms": [
+   ":CURSor:TRACk:IXDelta"
+  ]
+ },
+ ":FUNCtion:WRECord:FEND": {
+  "count": 5,
+  "forms": [
+   ":FUNCtion:WRECord:FEND"
+  ]
+ },
+ ":FUNCtion:WRECord:FMAX": {
+  "count": 4,
+  "forms": [
+   ":FUNCtion:WRECord:FMAX"
+  ]
+ },
+ ":FUNCtion:WRECord:INTerval": {
+  "count": 4,
+  "forms": [
+   ":FUNCtion:WRECord:INTerval"
+  ]
+ },
+ ":FUNCtion:WRECord:OPERate": {
+  "count": 4,
+  "forms": [
+   ":FUNCtion:WRECord:OPERate"
+  ]
+ },
+ ":FUNCtion:WREPlay:MODE": {
+  "count": 4,
+  "forms": [
+   ":FUNCtion:WREPlay:MODE"
+  ]
+ },
+ ":FUNCtion:WREPlay:FSTart": {
+  "count": 6,
+  "forms": [
+   ":FUNCtion:WREPlay:FSTart"
+  ]
+ },
+ ":FUNCtion:WREPlay:FCURrent": {
+  "count": 4,
+  "forms": [
+   ":FUNCtion:WREPlay:FCURrent"
+  ]
+ },
+ ":FUNCtion:WREPlay:FEND": {
+  "count": 6,
+  "forms": [
+   ":FUNCtion:WREPlay:FEND"
+  ]
+ },
+ ":FUNCtion:WREPlay:FMAX": {
+  "count": 8,
+  "forms": [
+   ":FUNCtion:WREPlay:FMAX"
+  ]
+ },
+ ":FUNCtion:WREPlay:OPERate": {
+  "count": 4,
+  "forms": [
+   ":FUNCtion:WREPlay:OPERate"
+  ]
+ },
+ ":FUNCtion:WREPlay:TTAG": {
+  "count": 4,
+  "forms": [
+   ":FUNCtion:WREPlay:TTAG"
+  ]
+ },
+ ":FUNCtion:WREPlay:CTAG": {
+  "count": 3,
+  "forms": [
+   ":FUNCtion:WREPlay:CTAG"
+  ]
+ },
+ ":FUNCtion:WANalyze:MODE": {
+  "count": 4,
+  "forms": [
+   ":FUNCtion:WANalyze:MODE"
+  ]
+ },
+ ":FUNCtion:WANalyze:SOURce": {
+  "count": 4,
+  "forms": [
+   ":FUNCtion:WANalyze:SOURce"
+  ]
+ },
+ ":FUNCtion:WANalyze:FCURrent": {
+  "count": 4,
+  "forms": [
+   ":FUNCtion:WANalyze:FCURrent"
+  ]
+ },
+ ":FUNCtion:WANalyze:TDISp": {
+  "count": 4,
+  "forms": [
+   ":FUNCtion:WANalyze:TDISp"
+  ]
+ },
+ ":FUNCtion:WANalyze:SETup:SSTart": {
+  "count": 4,
+  "forms": [
+   ":FUNCtion:WANalyze:SETup:SSTart"
+  ]
+ },
+ ":FUNCtion:WANalyze:SETup:SSENd": {
+  "count": 4,
+  "forms": [
+   ":FUNCtion:WANalyze:SETup:SSENd"
+  ]
+ },
+ ":FUNCtion:WANalyze:SETup:SFRame": {
+  "count": 4,
+  "forms": [
+   ":FUNCtion:WANalyze:SETup:SFRame"
+  ]
+ },
+ ":FUNCtion:WANalyze:SETup:EFRame": {
+  "count": 4,
+  "forms": [
+   ":FUNCtion:WANalyze:SETup:EFRame"
+  ]
+ },
+ ":FUNCtion:WANalyze:SETup:THReshold": {
+  "count": 4,
+  "forms": [
+   ":FUNCtion:WANalyze:SETup:THReshold"
+  ]
+ },
+ ":FUNCtion:WANalyze:SETup:XMASk": {
+  "count": 5,
+  "forms": [
+   ":FUNCtion:WANalyze:SETup:XMASk"
+  ]
+ },
+ ":FUNCtion:WANalyze:SETup:YMASk": {
+  "count": 5,
+  "forms": [
+   ":FUNCtion:WANalyze:SETup:YMASk"
+  ]
+ },
+ ":FUNCtion:WANalyze:STEMplate": {
+  "count": 3,
+  "forms": [
+   ":FUNCtion:WANalyze:STEMplate"
+  ]
+ },
+ ":FUNCtion:WANalyze:CMASk": {
+  "count": 3,
+  "forms": [
+   ":FUNCtion:WANalyze:CMASk"
+  ]
+ },
+ ":FUNCtion:WANalyze:STARt": {
+  "count": 4,
+  "forms": [
+   ":FUNCtion:WANalyze:STARt"
+  ]
+ },
+ ":FUNCtion:WANalyze:CANCel": {
+  "count": 3,
+  "forms": [
+   ":FUNCtion:WANalyze:CANCel"
+  ]
+ },
+ ":FUNCtion:WANalyze:PREVious": {
+  "count": 3,
+  "forms": [
+   ":FUNCtion:WANalyze:PREVious"
+  ]
+ },
+ ":FUNCtion:WANalyze:NEXT": {
+  "count": 3,
+  "forms": [
+   ":FUNCtion:WANalyze:NEXT"
+  ]
+ },
+ ":FUNCtion:WANalyze:EFCount": {
+  "count": 3,
+  "forms": [
+   ":FUNCtion:WANalyze:EFCount"
+  ]
+ },
+ ":FUNCtion:WANalyze:ECURrent": {
+  "count": 4,
+  "forms": [
+   ":FUNCtion:WANalyze:ECURrent"
+  ]
+ },
+ ":FUNCtion:WANalyze:ECDiff": {
+  "count": 3,
+  "forms": [
+   ":FUNCtion:WANalyze:ECDiff"
+  ]
+ },
+ ":MEASure:FDELay:SMAXimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:FDELay:SMAXimum"
+  ]
+ },
+ ":MEASure:FDELay:SMINimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:FDELay:SMINimum"
+  ]
+ },
+ ":MEASure:FDELay:SCURrent": {
+  "count": 4,
+  "forms": [
+   ":MEASure:FDELay:SCURrent"
+  ]
+ },
+ ":MEASure:FDELay:SAVerage": {
+  "count": 4,
+  "forms": [
+   ":MEASure:FDELay:SAVerage"
+  ]
+ },
+ ":MEASure:FDELay:SDEViation": {
+  "count": 4,
+  "forms": [
+   ":MEASure:FDELay:SDEViation"
+  ]
+ },
+ ":MEASure:FRDelay:SMAXimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:F2RDelay:SMAXimum"
+  ]
+ },
+ ":MEASure:FRDelay:SMINimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:F2RDelay:SMINimum"
+  ]
+ },
+ ":MEASure:FRDelay:SCURrent": {
+  "count": 4,
+  "forms": [
+   ":MEASure:F2RDelay:SCURrent"
+  ]
+ },
+ ":MEASure:FRDelay:SAVerage": {
+  "count": 4,
+  "forms": [
+   ":MEASure:F2RDelay:SAVerage"
+  ]
+ },
+ ":MEASure:FRDelay:SDEViation": {
+  "count": 4,
+  "forms": [
+   ":MEASure:F2RDelay:SDEViation"
+  ]
+ },
+ ":MEASure:FPHase:SMAXimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:FPHase:SMAXimum"
+  ]
+ },
+ ":MEASure:FPHase:SMINimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:FPHase:SMINimum"
+  ]
+ },
+ ":MEASure:FPHase:SCURrent": {
+  "count": 4,
+  "forms": [
+   ":MEASure:FPHase:SCURrent"
+  ]
+ },
+ ":MEASure:FPHase:SAVerage": {
+  "count": 4,
+  "forms": [
+   ":MEASure:FPHase:SAVerage"
+  ]
+ },
+ ":MEASure:FPHase:SDEViation": {
+  "count": 4,
+  "forms": [
+   ":MEASure:FPHase:SDEViation"
+  ]
+ },
+ ":MEASure:FRPhase:SMAXimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:F2RPhase:SMAXimum"
+  ]
+ },
+ ":MEASure:FRPhase:SMINimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:F2RPhase:SMINimum"
+  ]
+ },
+ ":MEASure:FRPhase:SCURrent": {
+  "count": 4,
+  "forms": [
+   ":MEASure:F2RPhase:SCURrent"
+  ]
+ },
+ ":MEASure:FRPhase:SAVerage": {
+  "count": 4,
+  "forms": [
+   ":MEASure:F2RPhase:SAVerage"
+  ]
+ },
+ ":MEASure:FRPhase:SDEViation": {
+  "count": 4,
+  "forms": [
+   ":MEASure:F2RPhase:SDEViation"
+  ]
+ },
+ ":MEASure:FREQuency:SMAXimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:FREQuency:SMAXimum"
+  ]
+ },
+ ":MEASure:FREQuency:SMINimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:FREQuency:SMINimum"
+  ]
+ },
+ ":MEASure:FREQuency:SCURrent": {
+  "count": 4,
+  "forms": [
+   ":MEASure:FREQuency:SCURrent"
+  ]
+ },
+ ":MEASure:FREQuency:SAVerage": {
+  "count": 4,
+  "forms": [
+   ":MEASure:FREQuency:SAVerage"
+  ]
+ },
+ ":MEASure:FREQuency:SDEViation": {
+  "count": 4,
+  "forms": [
+   ":MEASure:FREQuency:SDEViation"
+  ]
+ },
+ ":MEASure:FTIMe:SMAXimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:FTIMe:SMAXimum"
+  ]
+ },
+ ":MEASure:FTIMe:SMINimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:FTIMe:SMINimum"
+  ]
+ },
+ ":MEASure:FTIMe:SCURrent": {
+  "count": 4,
+  "forms": [
+   ":MEASure:FTIMe:SCURrent"
+  ]
+ },
+ ":MEASure:FTIMe:SAVerage": {
+  "count": 4,
+  "forms": [
+   ":MEASure:FTIMe:SAVerage"
+  ]
+ },
+ ":MEASure:FTIMe:SDEViation": {
+  "count": 4,
+  "forms": [
+   ":MEASure:FTIMe:SDEViation"
+  ]
+ },
+ ":MEASure:NDUTy:SMAXimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:NDUTy:SMAXimum"
+  ]
+ },
+ ":MEASure:NDUTy:SMINimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:NDUTy:SMINimum"
+  ]
+ },
+ ":MEASure:NDUTy:SCURrent": {
+  "count": 4,
+  "forms": [
+   ":MEASure:NDUTy:SCURrent"
+  ]
+ },
+ ":MEASure:NDUTy:SAVerage": {
+  "count": 4,
+  "forms": [
+   ":MEASure:NDUTy:SAVerage"
+  ]
+ },
+ ":MEASure:NDUTy:SDEViation": {
+  "count": 4,
+  "forms": [
+   ":MEASure:NDUTy:SDEViation"
+  ]
+ },
+ ":MEASure:NWIDth:SMAXimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:NWIDth:SMAXimum"
+  ]
+ },
+ ":MEASure:NWIDth:SMINimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:NWIDth:SMINimum"
+  ]
+ },
+ ":MEASure:NWIDth:SCURrent": {
+  "count": 4,
+  "forms": [
+   ":MEASure:NWIDth:SCURrent"
+  ]
+ },
+ ":MEASure:NWIDth:SAVerage": {
+  "count": 4,
+  "forms": [
+   ":MEASure:NWIDth:SAVerage"
+  ]
+ },
+ ":MEASure:NWIDth:SDEViation": {
+  "count": 4,
+  "forms": [
+   ":MEASure:NWIDth:SDEViation"
+  ]
+ },
+ ":MEASure:OVERshoot:SMAXimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:OVERshoot:SMAXimum"
+  ]
+ },
+ ":MEASure:OVERshoot:SMINimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:OVERshoot:SMINimum"
+  ]
+ },
+ ":MEASure:OVERshoot:SCURrent": {
+  "count": 4,
+  "forms": [
+   ":MEASure:OVERshoot:SCURrent"
+  ]
+ },
+ ":MEASure:OVERshoot:SAVerage": {
+  "count": 4,
+  "forms": [
+   ":MEASure:OVERshoot:SAVerage"
+  ]
+ },
+ ":MEASure:OVERshoot:SDEViation": {
+  "count": 4,
+  "forms": [
+   ":MEASure:OVERshoot:SDEViation"
+  ]
+ },
+ ":MEASure:PDUTy:SMAXimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:PDUTy:SMAXimum"
+  ]
+ },
+ ":MEASure:PDUTy:SMINimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:PDUTy:SMINimum"
+  ]
+ },
+ ":MEASure:PDUTy:SCURrent": {
+  "count": 4,
+  "forms": [
+   ":MEASure:PDUTy:SCURrent"
+  ]
+ },
+ ":MEASure:PDUTy:SAVerage": {
+  "count": 4,
+  "forms": [
+   ":MEASure:PDUTy:SAVerage"
+  ]
+ },
+ ":MEASure:PDUTy:SDEViation": {
+  "count": 4,
+  "forms": [
+   ":MEASure:PDUTy:SDEViation"
+  ]
+ },
+ ":MEASure:PERiod:SMAXimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:PERiod:SMAXimum"
+  ]
+ },
+ ":MEASure:PERiod:SMINimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:PERiod:SMINimum"
+  ]
+ },
+ ":MEASure:PERiod:SCURrent": {
+  "count": 4,
+  "forms": [
+   ":MEASure:PERiod:SCURrent"
+  ]
+ },
+ ":MEASure:PERiod:SAVerage": {
+  "count": 4,
+  "forms": [
+   ":MEASure:PERiod:SAVerage"
+  ]
+ },
+ ":MEASure:PERiod:SDEViation": {
+  "count": 4,
+  "forms": [
+   ":MEASure:PERiod:SDEViation"
+  ]
+ },
+ ":MEASure:PREShoot:SMAXimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:PREShoot:SMAXimum"
+  ]
+ },
+ ":MEASure:PREShoot:SMINimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:PREShoot:SMINimum"
+  ]
+ },
+ ":MEASure:PREShoot:SCURrent": {
+  "count": 4,
+  "forms": [
+   ":MEASure:PREShoot:SCURrent"
+  ]
+ },
+ ":MEASure:PREShoot:SAVerage": {
+  "count": 4,
+  "forms": [
+   ":MEASure:PREShoot:SAVerage"
+  ]
+ },
+ ":MEASure:PREShoot:SDEViation": {
+  "count": 4,
+  "forms": [
+   ":MEASure:PREShoot:SDEViation"
+  ]
+ },
+ ":MEASure:PWIDth:SMAXimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:PWIDth:SMAXimum"
+  ]
+ },
+ ":MEASure:PWIDth:SMINimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:PWIDth:SMINimum"
+  ]
+ },
+ ":MEASure:PWIDth:SCURrent": {
+  "count": 4,
+  "forms": [
+   ":MEASure:PWIDth:SCURrent"
+  ]
+ },
+ ":MEASure:PWIDth:SAVerage": {
+  "count": 4,
+  "forms": [
+   ":MEASure:PWIDth:SAVerage"
+  ]
+ },
+ ":MEASure:PWIDth:SDEViation": {
+  "count": 4,
+  "forms": [
+   ":MEASure:PWIDth:SDEViation"
+  ]
+ },
+ ":MEASure:RTIMe:SMAXimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:RTIMe:SMAXimum"
+  ]
+ },
+ ":MEASure:RTIMe:SMINimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:RTIMe:SMINimum"
+  ]
+ },
+ ":MEASure:RTIMe:SCURrent": {
+  "count": 4,
+  "forms": [
+   ":MEASure:RTIMe:SCURrent"
+  ]
+ },
+ ":MEASure:RTIMe:SAVerage": {
+  "count": 4,
+  "forms": [
+   ":MEASure:RTIMe:SAVerage"
+  ]
+ },
+ ":MEASure:RTIMe:SDEViation": {
+  "count": 4,
+  "forms": [
+   ":MEASure:RTIMe:SDEViation"
+  ]
+ },
+ ":MEASure:RDELay:SMAXimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:RDELay:SMAXimum"
+  ]
+ },
+ ":MEASure:RDELay:SMINimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:RDELay:SMINimum"
+  ]
+ },
+ ":MEASure:RDELay:SCURrent": {
+  "count": 4,
+  "forms": [
+   ":MEASure:RDELay:SCURrent"
+  ]
+ },
+ ":MEASure:RDELay:SAVerage": {
+  "count": 4,
+  "forms": [
+   ":MEASure:RDELay:SAVerage"
+  ]
+ },
+ ":MEASure:RDELay:SDEViation": {
+  "count": 4,
+  "forms": [
+   ":MEASure:RDELay:SDEViation"
+  ]
+ },
+ ":MEASure:RFDelay:SMAXimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:R2FDelay:SMAXimum"
+  ]
+ },
+ ":MEASure:RFDelay:SMINimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:R2FDelay:SMINimum"
+  ]
+ },
+ ":MEASure:RFDelay:SCURrent": {
+  "count": 4,
+  "forms": [
+   ":MEASure:R2FDelay:SCURrent"
+  ]
+ },
+ ":MEASure:RFDelay:SAVerage": {
+  "count": 4,
+  "forms": [
+   ":MEASure:R2FDelay:SAVerage"
+  ]
+ },
+ ":MEASure:RFDelay:SDEViation": {
+  "count": 4,
+  "forms": [
+   ":MEASure:R2FDelay:SDEViation"
+  ]
+ },
+ ":MEASure:RPHase:SMAXimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:RPHase:SMAXimum"
+  ]
+ },
+ ":MEASure:RPHase:SMINimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:RPHase:SMINimum"
+  ]
+ },
+ ":MEASure:RPHase:SCURrent": {
+  "count": 4,
+  "forms": [
+   ":MEASure:RPHase:SCURrent"
+  ]
+ },
+ ":MEASure:RPHase:SAVerage": {
+  "count": 4,
+  "forms": [
+   ":MEASure:RPHase:SAVerage"
+  ]
+ },
+ ":MEASure:RPHase:SDEViation": {
+  "count": 4,
+  "forms": [
+   ":MEASure:RPHase:SDEViation"
+  ]
+ },
+ ":MEASure:RFPhase:SMAXimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:R2FPhase:SMAXimum"
+  ]
+ },
+ ":MEASure:RFPhase:SMINimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:R2FPhase:SMINimum"
+  ]
+ },
+ ":MEASure:RFPhase:SCURrent": {
+  "count": 4,
+  "forms": [
+   ":MEASure:R2FPhase:SCURrent"
+  ]
+ },
+ ":MEASure:RFPhase:SAVerage": {
+  "count": 4,
+  "forms": [
+   ":MEASure:R2FPhase:SAVerage"
+  ]
+ },
+ ":MEASure:RFPhase:SDEViation": {
+  "count": 4,
+  "forms": [
+   ":MEASure:R2FPhase:SDEViation"
+  ]
+ },
+ ":MEASure:VAMP:SMAXimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:VAMP:SMAXimum"
+  ]
+ },
+ ":MEASure:VAMP:SMINimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:VAMP:SMINimum"
+  ]
+ },
+ ":MEASure:VAMP:SCURrent": {
+  "count": 4,
+  "forms": [
+   ":MEASure:VAMP:SCURrent"
+  ]
+ },
+ ":MEASure:VAMP:SAVerage": {
+  "count": 4,
+  "forms": [
+   ":MEASure:VAMP:SAVerage"
+  ]
+ },
+ ":MEASure:VAMP:SDEViation": {
+  "count": 4,
+  "forms": [
+   ":MEASure:VAMP:SDEViation"
+  ]
+ },
+ ":MEASure:VAVG:SMAXimum": {
+  "count": 5,
+  "forms": [
+   ":MEASure:VAVG:SMAXimum"
+  ]
+ },
+ ":MEASure:VAVG:SMINimum": {
+  "count": 5,
+  "forms": [
+   ":MEASure:VAVG:SMINimum"
+  ]
+ },
+ ":MEASure:VAVG:SCURrent": {
+  "count": 5,
+  "forms": [
+   ":MEASure:VAVG:SCURrent"
+  ]
+ },
+ ":MEASure:VAVG:SAVerage": {
+  "count": 5,
+  "forms": [
+   ":MEASure:VAVG:SAVerage"
+  ]
+ },
+ ":MEASure:VAVG:SDEViation": {
+  "count": 5,
+  "forms": [
+   ":MEASure:VAVG:SDEViation"
+  ]
+ },
+ ":MEASure:VBASe:SMAXimum": {
+  "count": 3,
+  "forms": [
+   ":MEASure:VBASe:SMAXimum"
+  ]
+ },
+ ":MEASure:VBASe:SMINimum": {
+  "count": 3,
+  "forms": [
+   ":MEASure:VBASe:SMINimum"
+  ]
+ },
+ ":MEASure:VBASe:SCURrent": {
+  "count": 3,
+  "forms": [
+   ":MEASure:VBASe:SCURrent"
+  ]
+ },
+ ":MEASure:VBASe:SAVerage": {
+  "count": 3,
+  "forms": [
+   ":MEASure:VBASe:SAVerage"
+  ]
+ },
+ ":MEASure:VBASe:SDEViation": {
+  "count": 3,
+  "forms": [
+   ":MEASure:VBASe:SDEViation"
+  ]
+ },
+ ":MEASure:VMAX:SMAXimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:VMAX:SMAXimum"
+  ]
+ },
+ ":MEASure:VMAX:SMINimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:VMAX:SMINimum"
+  ]
+ },
+ ":MEASure:VMAX:SCURrent": {
+  "count": 4,
+  "forms": [
+   ":MEASure:VMAX:SCURrent"
+  ]
+ },
+ ":MEASure:VMAX:SAVerage": {
+  "count": 4,
+  "forms": [
+   ":MEASure:VMAX:SAVerage"
+  ]
+ },
+ ":MEASure:VMAX:SDEViation": {
+  "count": 4,
+  "forms": [
+   ":MEASure:VMAX:SDEViation"
+  ]
+ },
+ ":MEASure:VMIN:SMAXimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:VMIN:SMAXimum"
+  ]
+ },
+ ":MEASure:VMIN:SMINimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:VMIN:SMINimum"
+  ]
+ },
+ ":MEASure:VMIN:SCURrent": {
+  "count": 4,
+  "forms": [
+   ":MEASure:VMIN:SCURrent"
+  ]
+ },
+ ":MEASure:VMIN:SAVerage": {
+  "count": 4,
+  "forms": [
+   ":MEASure:VMIN:SAVerage"
+  ]
+ },
+ ":MEASure:VMIN:SDEviation": {
+  "count": 2,
+  "forms": [
+   ":MEASure:VMIN:SDEviation"
+  ]
+ },
+ ":MEASure:VMIN:SDEViation": {
+  "count": 2,
+  "forms": [
+   ":MEASure:VMIN:SDEViation"
+  ]
+ },
+ ":MEASure:VPP:SMAXimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:VPP:SMAXimum"
+  ]
+ },
+ ":MEASure:VPP:SMINimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:VPP:SMINimum"
+  ]
+ },
+ ":MEASure:VPP:SCURrent": {
+  "count": 4,
+  "forms": [
+   ":MEASure:VPP:SCURrent"
+  ]
+ },
+ ":MEASure:VPP:SAVerage": {
+  "count": 4,
+  "forms": [
+   ":MEASure:VPP:SAVerage"
+  ]
+ },
+ ":MEASure:VPP:SDEViation": {
+  "count": 4,
+  "forms": [
+   ":MEASure:VPP:SDEViation"
+  ]
+ },
+ ":MEASure:VRMS:SMAXimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:VRMS:SMAXimum"
+  ]
+ },
+ ":MEASure:VRMS:SMINimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:VRMS:SMINimum"
+  ]
+ },
+ ":MEASure:VRMS:SCURrent": {
+  "count": 4,
+  "forms": [
+   ":MEASure:VRMS:SCURrent"
+  ]
+ },
+ ":MEASure:VRMS:SAVerage": {
+  "count": 4,
+  "forms": [
+   ":MEASure:VRMS:SAVerage"
+  ]
+ },
+ ":MEASure:VRMS:SDEViation": {
+  "count": 4,
+  "forms": [
+   ":MEASure:VRMS:SDEViation"
+  ]
+ },
+ ":MEASure:PVRMs:SMAXimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:PVRMs:SMAXimum"
+  ]
+ },
+ ":MEASure:PVRMs:SMINimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:PVRMs:SMINimum"
+  ]
+ },
+ ":MEASure:PVRMs:SCURrent": {
+  "count": 4,
+  "forms": [
+   ":MEASure:PVRMs:SCURrent"
+  ]
+ },
+ ":MEASure:PVRMs:SAVerage": {
+  "count": 4,
+  "forms": [
+   ":MEASure:PVRMs:SAVerage"
+  ]
+ },
+ ":MEASure:PVRMs:SDEViation": {
+  "count": 4,
+  "forms": [
+   ":MEASure:PVRMs:SDEViation"
+  ]
+ },
+ ":MEASure:VTOP:SMAXimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:VTOP:SMAXimum"
+  ]
+ },
+ ":MEASure:VTOP:SMINimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:VTOP:SMINimum"
+  ]
+ },
+ ":MEASure:VTOP:SCURrent": {
+  "count": 4,
+  "forms": [
+   ":MEASure:VTOP:SCURrent"
+  ]
+ },
+ ":MEASure:VTOP:SAVerage": {
+  "count": 4,
+  "forms": [
+   ":MEASure:VTOP:SAVerage"
+  ]
+ },
+ ":MEASure:VTOP:SDEViation": {
+  "count": 4,
+  "forms": [
+   ":MEASure:VTOP:SDEViation"
+  ]
+ },
+ ":MEASure:MARea:SMAXimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:MARea:SMAXimum"
+  ]
+ },
+ ":MEASure:MARea:SMINimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:MARea:SMINimum"
+  ]
+ },
+ ":MEASure:MARea:SCURrent": {
+  "count": 4,
+  "forms": [
+   ":MEASure:MARea:SCURrent"
+  ]
+ },
+ ":MEASure:MARea:SAVerage": {
+  "count": 4,
+  "forms": [
+   ":MEASure:MARea:SAVerage"
+  ]
+ },
+ ":MEASure:MARea:SDEViation": {
+  "count": 4,
+  "forms": [
+   ":MEASure:MARea:SDEViation"
+  ]
+ },
+ ":MEASure:MPARea:SMAXimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:MPARea:SMAXimum"
+  ]
+ },
+ ":MEASure:MPARea:SMINimum": {
+  "count": 4,
+  "forms": [
+   ":MEASure:MPARea:SMINimum"
+  ]
+ },
+ ":MEASure:MPARea:SCURrent": {
+  "count": 4,
+  "forms": [
+   ":MEASure:MPARea:SCURrent"
+  ]
+ },
+ ":MEASure:MPARea:SAVerage": {
+  "count": 4,
+  "forms": [
+   ":MEASure:MPARea:SAVerage"
+  ]
+ },
+ ":MEASure:MPARea:SDEViation": {
+  "count": 4,
+  "forms": [
+   ":MEASure:MPARea:SDEViation"
+  ]
+ },
+ ":SAVE:CSV": {
+  "count": 1,
+  "forms": [
+   ":SAVE:CSV"
+  ]
+ },
+ ":SAVE:IMAGe": {
+  "count": 1,
+  "forms": [
+   ":SAVE:IMAGe"
+  ]
+ },
+ ":SAVE:SETup": {
+  "count": 1,
+  "forms": [
+   ":SAVE:SETup"
+  ]
+ },
+ ":SAVE:TRACe": {
+  "count": 1,
+  "forms": [
+   ":SAVE:TRACe"
+  ]
+ },
+ ":SAVE:WAVeform": {
+  "count": 1,
+  "forms": [
+   ":SAVE:WAVeform"
+  ]
+ },
+ ":SAVE:REFerence": {
+  "count": 1,
+  "forms": [
+   ":SAVE:REFerence"
+  ]
+ },
+ ":SAVE:MTESt": {
+  "count": 1,
+  "forms": [
+   ":SAVE:MTESt"
+  ]
+ },
+ ":TRIGger:CAN:BAUD": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:CAN:BAUD"
+  ]
+ },
+ ":TRIGger:CAN:BUSer": {
+  "count": 5,
+  "forms": [
+   ":TRIGger:CAN:BUSer"
+  ]
+ },
+ ":TRIGger:CAN:SOURce": {
+  "count": 5,
+  "forms": [
+   ":TRIGger:CAN:SOURce"
+  ]
+ },
+ ":TRIGger:CAN:STYPe": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:CAN:STYPe"
+  ]
+ },
+ ":TRIGger:CAN:WHEN": {
+  "count": 5,
+  "forms": [
+   ":TRIGger:CAN:WHEN"
+  ]
+ },
+ ":TRIGger:CAN:SPOint": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:CAN:SPOint"
+  ]
+ },
+ ":TRIGger:CAN:FTYPe": {
+  "count": 5,
+  "forms": [
+   ":TRIGger:CAN:FTYPe"
+  ]
+ },
+ ":TRIGger:CAN:LEVel": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:CAN:LEVel"
+  ]
+ },
+ ":TRIGger:DELay:SA": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:DELay:SA"
+  ]
+ },
+ ":TRIGger:DELay:SB": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:DELay:SB"
+  ]
+ },
+ ":TRIGger:DELay:SLOPA": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:DELay:SLOPA"
+  ]
+ },
+ ":TRIGger:DELay:SLOPB": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:DELay:SLOPB"
+  ]
+ },
+ ":TRIGger:DELay:TLOWer": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:DELay:TLOWer"
+  ]
+ },
+ ":TRIGger:DELay:TUPPer": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:DELay:TUPPer"
+  ]
+ },
+ ":TRIGger:DELay:TYPe": {
+  "count": 6,
+  "forms": [
+   ":TRIGger:DELay:TYPe"
+  ]
+ },
+ ":TRIGger:DURATion:SOURce": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:DURATion:SOURce"
+  ]
+ },
+ ":TRIGger:DURATion:TLOWer": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:DURATion:TLOWer"
+  ]
+ },
+ ":TRIGger:DURATion:TUPPer": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:DURATion:TUPPer"
+  ]
+ },
+ ":TRIGger:DURATion:TYPe": {
+  "count": 6,
+  "forms": [
+   ":TRIGger:DURATion:TYPe"
+  ]
+ },
+ ":TRIGger:DURAtion:WHEN": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:DURAtion:WHEN"
+  ]
+ },
+ ":TRIGger:DURATion:WHEN": {
+  "count": 2,
+  "forms": [
+   ":TRIGger:DURATion:WHEN"
+  ]
+ },
+ ":TRIGger:EDGe:LEVel": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:EDGe:LEVel"
+  ]
+ },
+ ":TRIGger:EDGe:SLOPe": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:EDGe:SLOPe"
+  ]
+ },
+ ":TRIGger:EDGe:SOURce": {
+  "count": 5,
+  "forms": [
+   ":TRIGger:EDGe:SOURce"
+  ]
+ },
+ ":TRIGger:IIC:ADDRess": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:IIC:ADDRess"
+  ]
+ },
+ ":TRIGger:IIC:AWIDth": {
+  "count": 5,
+  "forms": [
+   ":TRIGger:IIC:AWIDth"
+  ]
+ },
+ ":TRIGger:IIC:CLEVel": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:IIC:CLEVel"
+  ]
+ },
+ ":TRIGger:IIC:DLEVel": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:IIC:DLEVel"
+  ]
+ },
+ ":TRIGger:IIC:DATA": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:IIC:DATA"
+  ]
+ },
+ ":TRIGger:IIC:DIRection": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:IIC:DIRection"
+  ]
+ },
+ ":TRIGger:IIC:SCL": {
+  "count": 5,
+  "forms": [
+   ":TRIGger:IIC:SCL"
+  ]
+ },
+ ":TRIGger:IIC:SDA": {
+  "count": 5,
+  "forms": [
+   ":TRIGger:IIC:SDA"
+  ]
+ },
+ ":TRIGger:IIC:WHEN": {
+  "count": 8,
+  "forms": [
+   ":TRIGger:IIC:WHEN"
+  ]
+ },
+ ":TRIGger:NEDGe:EDGE": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:NEDGe:EDGE"
+  ]
+ },
+ ":TRIGger:NEDGe:IDLE": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:NEDGe:IDLE"
+  ]
+ },
+ ":TRIGger:NEDGe:LEVel": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:NEDGe:LEVel"
+  ]
+ },
+ ":TRIGger:NEDGe:SLOPe": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:NEDGe:SLOPe"
+  ]
+ },
+ ":TRIGger:NEDGe:SOURce": {
+  "count": 5,
+  "forms": [
+   ":TRIGger:NEDGe:SOURce"
+  ]
+ },
+ ":TRIGger:PATTern:LEVel": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:PATTern:LEVel"
+  ]
+ },
+ ":TRIGger:PATTern:PATTern": {
+  "count": 6,
+  "forms": [
+   ":TRIGger:PATTern:PATTern"
+  ]
+ },
+ ":TRIGger:PATTern:SOURce": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:PATTern:SOURce"
+  ]
+ },
+ ":TRIGger:PULSe:LEVel": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:PULSe:LEVel"
+  ]
+ },
+ ":TRIGger:PULSe:LWIDth": {
+  "count": 8,
+  "forms": [
+   ":TRIGger:PULSe:LWIDth"
+  ]
+ },
+ ":TRIGger:PULSe:SOURce": {
+  "count": 5,
+  "forms": [
+   ":TRIGger:PULSe:SOURce"
+  ]
+ },
+ ":TRIGger:PULSe:UWIDth": {
+  "count": 8,
+  "forms": [
+   ":TRIGger:PULSe:UWIDth"
+  ]
+ },
+ ":TRIGger:PULSe:WHEN": {
+  "count": 6,
+  "forms": [
+   ":TRIGger:PULSe:WHEN"
+  ]
+ },
+ ":TRIGger:RS:BAUD": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:RS232:BAUD"
+  ]
+ },
+ ":TRIGger:RS:BUSer": {
+  "count": 5,
+  "forms": [
+   ":TRIGger:RS232:BUSer"
+  ]
+ },
+ ":TRIGger:RS:DATA": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:RS232:DATA"
+  ]
+ },
+ ":TRIGger:RS:LEVel": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:RS232:LEVel"
+  ]
+ },
+ ":TRIGger:RS:PARity": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:RS232:PARity"
+  ]
+ },
+ ":TRIGger:RS:SOURce": {
+  "count": 5,
+  "forms": [
+   ":TRIGger:RS232:SOURce"
+  ]
+ },
+ ":TRIGger:RS:STOP": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:RS232:STOP"
+  ]
+ },
+ ":TRIGger:RS:WHEN": {
+  "count": 8,
+  "forms": [
+   ":TRIGger:RS232:WHEN"
+  ]
+ },
+ ":TRIGger:RS:WIDTh": {
+  "count": 5,
+  "forms": [
+   ":TRIGger:RS232:WIDTh"
+  ]
+ },
+ ":TRIGger:RUNT:ALEVel": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:RUNT:ALEVel"
+  ]
+ },
+ ":TRIGger:RUNT:BLEVel": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:RUNT:BLEVel"
+  ]
+ },
+ ":TRIGger:RUNT:SOURce": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:RUNT:SOURce"
+  ]
+ },
+ ":TRIGger:RUNT:POLarity": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:RUNT:POLarity"
+  ]
+ },
+ ":TRIGger:RUNT:WHEN": {
+  "count": 6,
+  "forms": [
+   ":TRIGger:RUNT:WHEN"
+  ]
+ },
+ ":TRIGger:RUNT:WLOWer": {
+  "count": 6,
+  "forms": [
+   ":TRIGger:RUNT:WLOWer"
+  ]
+ },
+ ":TRIGger:RUNT:WUPPer": {
+  "count": 6,
+  "forms": [
+   ":TRIGger:RUNT:WUPPer"
+  ]
+ },
+ ":TRIGger:SHOLd:CSrc": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:SHOLd:CSrc"
+  ]
+ },
+ ":TRIGger:SHOLd:DSrc": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:SHOLd:DSrc"
+  ]
+ },
+ ":TRIGger:SHOLd:HTIMe": {
+  "count": 6,
+  "forms": [
+   ":TRIGger:SHOLd:HTIMe"
+  ]
+ },
+ ":TRIGger:SHOLd:PATTern": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:SHOLd:PATTern"
+  ]
+ },
+ ":TRIGger:SHOLd:SLOPe": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:SHOLd:SLOPe"
+  ]
+ },
+ ":TRIGger:SHOLd:STIMe": {
+  "count": 6,
+  "forms": [
+   ":TRIGger:SHOLd:STIMe"
+  ]
+ },
+ ":TRIGger:SHOLd:TYPe": {
+  "count": 6,
+  "forms": [
+   ":TRIGger:SHOLd:TYPe"
+  ]
+ },
+ ":TRIGger:SLOPe:ALEVel": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:SLOPe:ALEVel"
+  ]
+ },
+ ":TRIGger:SLOPe:BLEVel": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:SLOPe:BLEVel"
+  ]
+ },
+ ":TRIGger:SLOPe:TLOWer": {
+  "count": 8,
+  "forms": [
+   ":TRIGger:SLOPe:TLOWer"
+  ]
+ },
+ ":TRIGger:SLOPe:TUPPer": {
+  "count": 8,
+  "forms": [
+   ":TRIGger:SLOPe:TUPPer"
+  ]
+ },
+ ":TRIGger:SLOPe:SOURce": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:SLOPe:SOURce"
+  ]
+ },
+ ":TRIGger:SLOPe:WHEN": {
+  "count": 6,
+  "forms": [
+   ":TRIGger:SLOPe:WHEN"
+  ]
+ },
+ ":TRIGger:SLOPe:WINDow": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:SLOPe:WINDow"
+  ]
+ },
+ ":TRIGger:SPI:CLEVel": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:SPI:CLEVel"
+  ]
+ },
+ ":TRIGger:SPI:DLEVel": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:SPI:DLEVel"
+  ]
+ },
+ ":TRIGger:SPI:DATA": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:SPI:DATA"
+  ]
+ },
+ ":TRIGger:SPI:SCL": {
+  "count": 5,
+  "forms": [
+   ":TRIGger:SPI:SCL"
+  ]
+ },
+ ":TRIGger:SPI:SDA": {
+  "count": 5,
+  "forms": [
+   ":TRIGger:SPI:SDA"
+  ]
+ },
+ ":TRIGger:SPI:SLOPe": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:SPI:SLOPe"
+  ]
+ },
+ ":TRIGger:SPI:TIMeout": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:SPI:TIMeout"
+  ]
+ },
+ ":TRIGger:SPI:WIDTh": {
+  "count": 5,
+  "forms": [
+   ":TRIGger:SPI:WIDTh"
+  ]
+ },
+ ":TRIGger:TIMeout:SOURce": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:TIMeout:SOURce"
+  ]
+ },
+ ":TRIGger:TIMeout:SLOPe": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:TIMeout:SLOPe"
+  ]
+ },
+ ":TRIGger:TIMeout:TIMe": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:TIMeout:TIMe"
+  ]
+ },
+ ":TRIGger:USB:DMINus": {
+  "count": 5,
+  "forms": [
+   ":TRIGger:USB:DMINus"
+  ]
+ },
+ ":TRIGger:USB:DPLus": {
+  "count": 5,
+  "forms": [
+   ":TRIGger:USB:DPLus"
+  ]
+ },
+ ":TRIGger:USB:MLEVel": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:USB:MLEVel"
+  ]
+ },
+ ":TRIGger:USB:PLEVel": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:USB:PLEVel"
+  ]
+ },
+ ":TRIGger:USB:SPEed": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:USB:SPEed"
+  ]
+ },
+ ":TRIGger:USB:WHEN": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:USB:WHEN"
+  ]
+ },
+ ":TRIGger:VIDeo:MODE": {
+  "count": 5,
+  "forms": [
+   ":TRIGger:VIDeo:MODE"
+  ]
+ },
+ ":TRIGger:VIDeo:LEVel": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:VIDeo:LEVel"
+  ]
+ },
+ ":TRIGger:VIDeo:LINE": {
+  "count": 5,
+  "forms": [
+   ":TRIGger:VIDeo:LINE"
+  ]
+ },
+ ":TRIGger:VIDeo:POLarity": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:VIDeo:POLarity"
+  ]
+ },
+ ":TRIGger:VIDeo:SOURce": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:VIDeo:SOURce"
+  ]
+ },
+ ":TRIGger:VIDeo:STANdard": {
+  "count": 5,
+  "forms": [
+   ":TRIGger:VIDeo:STANdard"
+  ]
+ },
+ ":TRIGger:WINDows:ALEVel": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:WINDows:ALEVel"
+  ]
+ },
+ ":TRIGger:WINDows:BLEVel": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:WINDows:BLEVel"
+  ]
+ },
+ ":TRIGger:WINDows:POSition": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:WINDows:POSition"
+  ]
+ },
+ ":TRIGger:WINDows:TIMe": {
+  "count": 3,
+  "forms": [
+   ":TRIGger:WINDows:TIMe"
+  ]
+ },
+ ":TRIGger:WINDows:SOURce": {
+  "count": 4,
+  "forms": [
+   ":TRIGger:WINDows:SOURce"
+  ]
+ },
+ ":TRIGger:WINDows:SLOPe": {
+  "count": 3,
+  "forms": [
+   ":TRIGger:WINDows:SLOPe"
+  ]
+ },
+ ":WAV:SOUR": {
+  "count": 4,
+  "forms": [
+   ":WAV:SOUR"
+  ]
+ },
+ ":WAV:MODE": {
+  "count": 3,
+  "forms": [
+   ":WAV:MODE"
+  ]
+ },
+ ":WAV:FORM": {
+  "count": 4,
+  "forms": [
+   ":WAV:FORM"
+  ]
+ },
+ ":WAV:DATA": {
+  "count": 7,
+  "forms": [
+   ":WAV:DATA"
+  ]
+ },
+ ":WAV:STAR": {
+  "count": 4,
+  "forms": [
+   ":WAV:STAR"
+  ]
+ },
+ ":WAV:STOP": {
+  "count": 4,
+  "forms": [
+   ":WAV:STOP"
+  ]
+ },
+ ":wav:data": {
+  "count": 1,
+  "forms": [
+   ":wav:data"
+  ]
+ }
+}

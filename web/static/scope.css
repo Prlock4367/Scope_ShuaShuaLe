@@ -1,0 +1,235 @@
+/* ─────────────────────────────────────────────────────────────
+ * Scope_ShuaShuaLe — 网页端补充样式
+ * 主体视觉（卡片 / 表格 / 按钮 / 字体）全在 style.css 里，那套是从
+ * Yue_ShuaShuaLe 直接拿来的同一份设计系统；本文件只加示波器特有的东西：
+ * 波形画布、连接状态点、输入框、记录页的触发提示。
+ * ───────────────────────────────────────────────────────────── */
+
+/* 三卡网格里让波形卡占两列 */
+.stat-card.wide { grid-column: span 2; }
+@media (max-width: 1000px) {
+    .stat-card.wide { grid-column: auto; }
+}
+/* 首页三列：左右空白占位卡 + 中间波形卡（flex 才好在中间塞列又不改共享的 grid） */
+.wave-row {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 16px;
+}
+.stat-card.blank {
+    flex: 0 0 190px;
+    width: 190px;
+}
+
+/* 左卡：光标。和触发卡同宽，波形图才在整个页面正中间 */
+.stat-card.cursor-card {
+    flex: 0 0 180px;
+    width: 180px;
+    padding: 18px 14px;
+}
+.cur-rows { margin-top: 0; }
+/* 模式行和显示/信源行之间别留大空档：原来 18+14=32px，压到 8px */
+.cursor-card > .filter-row:first-child { margin-bottom: 14px; }
+.cursor-card .filter-label { min-width: 28px; font-size: 14px; }
+.cursor-card .dd { flex: 0 0 auto; min-width: 0; }
+.cursor-card .cur-dd { flex: 0 0 auto; }
+.cursor-card .cur-dd .dd-trigger { width: auto; min-width: 62px; }
+.cursor-card .dd-trigger { width: auto; min-width: 0; height: 30px; padding: 0 10px; font-size: 14px; }
+.cursor-card .cur-ctl { margin-bottom: 10px; gap: 10px; }
+.cursor-card .cur-ctl .filter-label { min-width: 30px; font-size: 13px; }
+.cursor-card .cur-ctl .platform-chips { gap: 6px; }
+.cursor-card .cur-ctl .chip {
+    height: 24px;
+    padding: 0 8px;
+    font-size: 12px;
+    border-radius: 6px;
+}
+.cur-read {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+.cur-read:first-of-type { border-top: 1px solid rgba(0, 0, 0, 0.06); }
+.cur-read span { font-size: 13px; color: var(--text-muted); }
+.cur-read b {
+    font-size: 14px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+/* 右卡：触发。和光标卡等宽，中间波形才真正居中 */
+.stat-card.trig-card {
+    flex: 0 0 180px;
+    width: 180px;
+    padding: 18px;
+}
+.trig-card .filter-label { min-width: 28px; }
+.trig-card .filter-row { gap: 6px; }
+.trig-card .dd { flex: 0 0 auto; }
+.trig-card .dd-trigger { width: auto; min-width: 62px; height: 30px; font-size: 14px; }
+.trig-card .chip {
+    height: 28px;
+    padding: 0 5px;
+    font-size: 12px;
+}
+.trig-card .platform-chips { gap: 5px; }
+.trig-num {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.trig-num .inp {
+    width: 60px;
+    font-variant-numeric: tabular-nums;
+}
+.trig-num .unit {
+    min-width: 12px;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+/* 下发结果：正常灰、成功绿、失败红；贴在卡片底部 */
+.trig-note {
+    margin-top: auto;
+    min-height: 18px;
+    line-height: 1.5;
+}
+.trig-note.ok { color: var(--success); }
+.trig-note.bad { color: var(--danger); }
+.trig-card.busy { opacity: 0.7; }
+
+
+@media (max-width: 1000px) {
+    .stat-card.blank { display: none; }   /* 空占位卡先让位 */
+}
+@media (max-width: 760px) {
+    .wave-row { flex-direction: column; align-items: stretch; }
+    .stat-card.solo, .stat-card.trig-card { width: auto; flex: none; }
+}
+
+/* 中间这张：包住图，上下留白按"卡片边到网格"算成等宽 */
+.stat-card.solo {
+    width: fit-content;          /* 包住图，不摊满整行 */
+    padding: 10px 22px 21px;
+}
+
+/* 图上方一行：状态在左，时基挨着它，自动刷新在最右。
+   左右各让 26px，跟画布里网格的左右边对齐（SIDE=26，手柄只占一列） */
+.wave-bar {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 0 26px;
+    margin-bottom: 4px;
+}
+.wave-bar .chk-wrap { margin-left: auto; }
+
+/* 顶栏连接状态药丸 */
+.conn-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.045);
+    font-size: 12px;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+.conn-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #c0c4cc;
+    flex-shrink: 0;
+}
+.conn-dot.on { background: var(--success); }
+.conn-dot.demo { background: var(--warn); }
+/* 错误队列提示：仪器报错时才出现，正常时整块隐藏 */
+.err-pill {
+    color: var(--danger);
+    background: rgba(220, 38, 38, 0.08);
+    cursor: help;
+}
+.conn-dot.err { background: var(--danger); }
+
+/* 波形画布：宽高都由 main.js 按 14:8 算好写死，这里只兜底初始尺寸 */
+canvas.wave {
+    display: block;
+    min-width: 280px;
+    min-height: 200px;
+    border-radius: var(--radius-lg);
+    touch-action: none;          /* 触摸拖波形时别让页面跟着滚 */
+}
+.wave-bar #waveNote {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.wave-bar #waveNote.bad { color: var(--danger); font-weight: 600; }
+
+/* 输入框 */
+.inp {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 7px 10px;
+    font-family: var(--font);
+    font-size: 14px;
+    color: var(--text);
+    background: #fff;
+}
+.inp:focus { outline: none; border-color: var(--accent); }
+.inp.sm { width: 68px; padding: 4px 8px; font-size: 13px; }
+.inp.grow { flex: 1; min-width: 120px; }
+
+/* 记录页：冻结状态提示条 */
+.trig-box {
+    margin: 2px 0 16px;
+    padding: 12px 14px;
+    border-radius: var(--radius-sm);
+    background: var(--warn-soft);
+    color: var(--warn);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.6;
+}
+.trig-box.ready { background: var(--success-soft); color: var(--success); }
+.trig-box b { font-weight: 700; }
+
+.btn-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+.btn[disabled] { opacity: 0.45; cursor: not-allowed; }
+.btn[disabled]:hover { border-color: var(--border); color: var(--text); }
+
+.hint { font-size: 12px; color: var(--text-muted); line-height: 1.75; }
+.hint code { background: rgba(0, 0, 0, 0.05); padding: 1px 4px; border-radius: 4px; }
+/* 波形页采集状态：冻结时照仪器 STOP 标红 */
+.hint.stop { color: var(--danger); font-weight: 600; }
+
+/* 表格里的等宽数字 */
+.num { font-variant-numeric: tabular-nums; }
+.muted { color: var(--text-muted); }
+
+/* 关于页：用 style.css 的 .about-card + section 结构，不再套内层卡片
+   （.info-section 自带玻璃背景 + 边框 + 阴影，套在白色大卡里会形成卡中卡） */
+
+/* 通用表格：style.css 里那套 .item-table 列宽是按行情表调的，这里不套用它的列规则 */
+.grid-table { width: 100%; }
+.grid-table td.fname { word-break: break-all; }   /* 只有长文件名允许折行 */
+.grid-table td.nowrap { white-space: nowrap; }    /* 类型 / 大小 / 时间 不折 */
+
+/* 复选框行 */
+.chk-wrap {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+.chk-wrap input { accent-color: var(--accent); }
+

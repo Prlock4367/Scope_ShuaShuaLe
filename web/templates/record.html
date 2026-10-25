@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}示波器刷刷乐 — 记录{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <div class="stats-row">
+        <!-- 记录动作 -->
+        <div class="stat-card wide">
+            <div class="section-title" style="margin-bottom:16px">记录</div>
+
+            <div class="filter-row">
+                <span class="filter-label">标签</span>
+                <input class="inp grow" id="tag" maxlength="40" placeholder="例如 J1-波形 / OPT1（会写进文件名）">
+            </div>
+
+            <div class="trig-box" id="trigBox">正在读仪器状态…</div>
+
+            <div class="btn-row">
+                <button class="btn primary" id="btnRecord" disabled>开始记录</button>
+                <button class="btn" id="btnShot">只截图</button>
+                <button class="btn" id="btnOpen">打开记录目录</button>
+            </div>
+
+            <div class="hint">
+                <b>记录</b> = 截图 + 双通道屏幕波形 CSV，一次落盘；<b>只读</b>，不改仪器任何设置。<br>
+                操作顺序：面板按 <code>STOP</code> 冻结目标画面 → 点「开始记录」→ 面板按 <code>RUN</code> 恢复运行。<br>
+                DEMO 模式下也会落盘（文件名带 <code>demo-</code> 前缀），只为把流程走通。
+            </div>
+            <div class="hint" id="resultBox" style="margin-top:12px"></div>
+        </div>
+
+        <!-- 落盘位置 -->
+        <div class="stat-card">
+            <div class="metric-grid">
+                <div class="metric">
+                    <div class="value" id="fileCount">0</div>
+                    <div class="label">记录文件</div>
+                </div>
+            </div>
+            <div class="hint" style="margin-top:18px">
+                落盘目录<br><span id="recRoot" class="num">—</span><br>
+                按日期分子文件夹（<code>YYYYMMDD-附件</code>），截图 PNG + 波形 CSV 都在里面。
+            </div>
+        </div>
+    </div>
+
+    <!-- 已落盘的文件 -->
+    <div class="main-card">
+        <table class="grid-table">
+            <thead>
+                <tr>
+                    <th>文件名</th>
+                    <th style="width:110px">类型</th>
+                    <th style="width:100px">大小</th>
+                    <th style="width:170px">时间</th>
+                    <th style="width:90px"></th>
+                </tr>
+            </thead>
+            <tbody id="fileTable"></tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock %}
